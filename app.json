@@ -7,7 +7,8 @@
     "pages/mywallet/index",
     "pages/pay/index",
     "pages/coupon/index",
-    "pages/icCard/index"
+    "pages/icCard/index",
+    "pages/myOrder/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

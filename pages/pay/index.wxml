@@ -11,7 +11,7 @@
     </view>
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
     <view class="f">
-      <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
       <view class="f1 g7c8094 fs30r">微信支付</view>
       <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
       <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>

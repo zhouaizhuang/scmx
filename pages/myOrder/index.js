@@ -1,5 +1,4 @@
-import { navigateTo } from "../../api"
-// pages/mine/index.js
+// pages/orderList/index.js
 Page({
 
   /**
@@ -8,23 +7,12 @@ Page({
   data: {
 
   },
-  goWallet(){
-    navigateTo('../mywallet/index')
-  },
-  myCoupon(){
-    navigateTo('../coupon/index')
-  },
-  goIcCard(){
-    navigateTo('../icCard/index')
-  },
-  goMyOrder(){
-    navigateTo('../myOrder/index')
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideHomeButton()
+
   },
 
   /**

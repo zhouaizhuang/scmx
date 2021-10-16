@@ -1,0 +1,80 @@
+<view class="h100vh rel bgf5f6fa">
+  <view class="pl30r pr30r pt30r pb30r">
+    <!--已支付的订单-->
+    <view class="bgf pt40r pl30r pr30r pb30r rds10r mb30r">
+      <view class="f mb50r">
+        <view class="f1 g2b3446 fs30r b">机器编号：20210912143076131</view>
+        <view class="g61d382 rds5r f ac xc fs22r b" style="width: 86rpx;height: 40rpx;background: rgba(97,211, 130, .1);">
+          已支付
+        </view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单时间</view>
+        <view class="f1 g2b3446 fs28r">2021.09.19 11:09:11</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单地址</view>
+        <view class="f1 g2b3446 fs28r">世茂·香槟湖南区</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">交易金额</view>
+        <view class="f1 g2b3446 fs28r">￥100 5kg</view>
+      </view>
+    </view>
+    <!--未支付的订单-->
+    <view class="bgf pt40r pl30r pr30r pb30r rds10r mb30r">
+      <view class="f mb50r">
+        <view class="f1 g2b3446 fs30r b">机器编号：20210912143076131</view>
+        <view class="gff8b36 rds5r f ac xc fs22r b" style="width: 86rpx;height: 40rpx;background: rgba(255,139, 54, .1);">
+          未支付
+        </view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单时间</view>
+        <view class="f1 g2b3446 fs28r">2021.09.19 11:09:11</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单地址</view>
+        <view class="f1 g2b3446 fs28r">世茂·香槟湖南区</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">交易金额</view>
+        <view class="f1 g2b3446 fs28r">￥100 5kg</view>
+      </view>
+      <view class="f xe">
+        <view class="rds30r f ac xc fs26r gf b" style="width: 138rpx;height: 58rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);">去付款</view>
+      </view>
+    </view>
+    <!--已关闭的订单-->
+    <view class="bgf pt40r pl30r pr30r pb30r rds10r mb30r">
+      <view class="f mb50r">
+        <view class="f1 g2b3446 fs30r b">机器编号：20210912143076131</view>
+        <view class="g7c8094 rds5r f ac xc fs22r b" style="width: 86rpx;height: 40rpx;background: rgba(245,246, 250, .1);">
+          已关闭
+        </view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单时间</view>
+        <view class="f1 g2b3446 fs28r">2021.09.19 11:09:11</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">下单地址</view>
+        <view class="f1 g2b3446 fs28r">世茂·香槟湖南区</view>
+      </view>
+      <view class="f ac mb15r">
+        <view class="g7c8094 fs28r mr30r">交易金额</view>
+        <view class="f1 g2b3446 fs28r">￥100 5kg</view>
+      </view>
+      <view class="f xe">
+        <view class="rds30r f ac xc fs26r g7c8094 b bgf5f6fa" style="width:162rpx;height: 58rpx;">删除订单</view>
+      </view>
+    </view>
+
+
+    <!--缺省页面-->
+    <view class="abs l50 tx-50" style="top:450rpx;">
+      <image class="mb30r" style="width:220rpx;height:156rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text_01.png"></image>
+      <view class="g7c8094 fs30r">您还没有下单过哦~</view>
+    </view>
+  </view>
+</view>
