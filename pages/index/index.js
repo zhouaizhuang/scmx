@@ -9,6 +9,8 @@ Page({
   data: {
     showLocation: true,
     // subkey: "SS5BZ-YG23F-DHJJH-JJ4QS-SGN76-5SGIV",
+    clickPointItem: {}, // 选择的点位
+    isShowDetail: true, // 是否显示详情
     markers: [
       { // 绘制浮标，传入JSON支持多个
         iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
@@ -65,6 +67,7 @@ Page({
     // console.log(e)
     const markerId = e.markerId || e.detail.markerId
     console.log(markerId)
+    this.setData({ isShowDetail: true, clickPointItem: {id: markerId} })
     // const checkedPoint = markers.find(item => item.id == markerId)
     // 根据id调借口查出详情数据
   },
@@ -89,6 +92,14 @@ Page({
       }
     })
   },
+  tapBlank(){
+    setTimeout(() => {
+      if(JSON.stringify(this.data.clickPointItem) === '{}') {
+        this.setData({ isShowDetail: false })
+      }
+      this.setData({ clickPointItem: {} })
+    }, 200)
+  },
   // 事件处理函数
   // bindViewTap() {
   //   wx.navigateTo({
@@ -97,7 +108,6 @@ Page({
   // },
   async onLoad() {
     this.mapCtx = wx.createMapContext('myMap')
-
     const { lng, lat } = await getLocation()
     // console.log(lng, lat)
     // wx.openLocation({ //此设置属于高级APi,可以打开微信内置地图组件

@@ -13,11 +13,12 @@
     bindmarkertap="markertap"
     bindregionchange="regionDidChange"
     style="width:100%;height:100vh;"
+    bindtap="tapBlank"
   >
     <cover-image style="width:82rpx;height:97rpx;" class="abs l50 t50 txy-50" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_loc.png"></cover-image>
   </map>
   <!--当前选择的点的详细信息-->
-  <view class="abs zx100 w100 l0 bgimg" style="bottom:110rpx;border-radius: 20rpx 20rpx 0 0;">
+  <view class="abs zx100 w100 l0 bgimg trans2 {{isShowDetail ? 'ty0' : 'ty130' }}" style="bottom:110rpx;border-radius: 20rpx 20rpx 0 0;">
     <image style="width:235rpx;height:80rpx;top:-90rpx;" class="abs l30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ploblem.png"></image>
     <image bindtap="moveToLocation" style="width:80rpx;height:80rpx;top:-90rpx;" class="abs r30r" src="../images/scmx_go_center.png"></image>
     <view style="padding:60rpx 48rpx 20rpx 50rpx;">
