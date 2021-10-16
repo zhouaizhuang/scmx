@@ -1,0 +1,38 @@
+<view class="h100vh rel" style="background:#fff;">
+  <view class="bgtop rel zx1">
+    <view class="f ac pt30r pl40r pr40r">
+      <image style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <view class="f1 f rw">
+        <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>500</view>
+        <view class="w100 gf op6 fs24r">可用余额</view>
+      </view>
+      <view class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">充值</view>
+    </view>
+  </view>
+  <!--内容主体-->
+  <view class="rel bgf zx10 auto" style="width:650rpx;transform:translateY(-100rpx);box-shadow: 0px 20px 40px 0px rgba(159, 165, 183, 0.1);border-radius: 0px 0px 20px 20px;">
+    <view class="bgbody rel zx1">
+      <view class="rel pt50r g2b3446 fs30r b tc">
+        交易明细
+        <view class="abs l50 tx-50 linear6766e5 rds5r" style="bottom:-18rpx;width:30rpx;height:6rpx;"></view>
+      </view>
+    </view>
+    <view class="pl30r pr30r pb30r">
+      <view class="bdbf0f2fd pb30r mb30r">
+        <view class="fs24r ga8abbc mb20r">2021.07.08 13:47:07</view>
+        <view class="f xb">
+          <view class="g2b3446 b fs28r">充值</view>
+          <!--g2b3446-->
+          <view class="gff8b36 fs30r b"><text class="pr10r">+</text>50.00</view>
+        </view>
+      </view>
+      <view class="bdbf0f2fd pb30r mb30r">
+        <view class="fs24r ga8abbc mb20r">2021.07.08 13:47:07</view>
+        <view class="f xb">
+          <view class="g2b3446 b fs28r">提现</view>
+          <view class="g2b3446 fs30r b"><text class="pr10r">-</text>50.00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/qrcode/index",
     "pages/mine/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/mywallet/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

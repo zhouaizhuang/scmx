@@ -1,5 +1,4 @@
-import { navigateTo } from "../../api"
-// pages/mine/index.js
+// pages/mywallet/index.js
 Page({
 
   /**
@@ -8,14 +7,12 @@ Page({
   data: {
 
   },
-  goWallet(){
-    navigateTo('../mywallet/index')
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideHomeButton()
+
   },
 
   /**
