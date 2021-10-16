@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="h100vh rel ovh" style="background:#999;">
+<view class="h100vh rel ovh" style="background:#fff;">
   <!--https://www.jianshu.com/p/a05fa4cad796-->
   <map 
     id="myMap" 

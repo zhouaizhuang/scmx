@@ -1,4 +1,40 @@
 <!--index.wxml-->
-<view class="h100vh rel" style="background:#999;">
+<view class="h100vh rel" style="background:#fff;">
+  <view class="bgtop rel zx1">
+    <view class="f ac pt30r pl40r pr40r">
+      <image style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <view class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">请先登录</view>
+    </view>
+  </view>
+  <!--个人中心菜单-->
+  <view class="rel zx10 bgf rds20r auto" style="transform:translateY(-100rpx);width:650rpx;box-shadow: 0px 5px 209px 11px rgba(177, 184, 200, 0.1);">
+    <view class="pl30r pt20r pr30r pb40r">
+      <view class="f ac pt30r pb30r bdbf0f2fd">
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wallet.png"></image>
+        <view class="f1 g2b3446 b fs34r">我的钱包</view>
+        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+      </view>
+      <view class="f ac pt30r pb30r bdbf0f2fd">
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_01.png"></image>
+        <view class="f1 g2b3446 b fs34r">我的卡券</view>
+        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+      </view>
+      <view class="f ac pt30r pb30r bdbf0f2fd">
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_red.png"></image>
+        <view class="f1 g2b3446 b fs34r">我的IC卡</view>
+        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+      </view>
+       <view class="f ac pt30r pb30r bdbf0f2fd">
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text.png"></image>
+        <view class="f1 g2b3446 b fs34r">我的订单</view>
+        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+      </view>
+       <view class="f ac pt30r pb30r bdbf0f2fd">
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat.png"></image>
+        <view class="f1 g2b3446 b fs34r">联系我们</view>
+        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+      </view>
+    </view>
+  </view>
   <tabbar selectTab="mine"></tabbar>
 </view>
