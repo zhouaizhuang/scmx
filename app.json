@@ -5,7 +5,8 @@
     "pages/mine/index",
     "pages/logs/logs",
     "pages/mywallet/index",
-    "pages/pay/index"
+    "pages/pay/index",
+    "pages/coupon/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

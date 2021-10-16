@@ -1,24 +1,23 @@
-import { navigateTo } from "../../api"
-// pages/mine/index.js
+// pages/coupon/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    currentTab: '0',
+    currentTabClass:'l18', 
   },
-  goWallet(){
-    navigateTo('../mywallet/index')
-  },
-  myCoupon(){
-    navigateTo('../coupon/index')
+  selectTab(e) {
+    const { index } = e.currentTarget.dataset
+    const mapClass= ['l18', 'l48', 'l78']
+    this.setData({currentTab: index, currentTabClass:mapClass[index]})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideHomeButton()
+
   },
 
   /**

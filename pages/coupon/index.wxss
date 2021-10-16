@@ -1,0 +1,10 @@
+/* pages/coupon/index.wxss */
+.linear6766e5{
+  background:linear-gradient(to right, #6766E5, #4847EE);
+}
+.couponbg{
+  height:160rpx;
+  width:650rpx;
+  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card.png') no-repeat;
+  background-size:100%;
+}

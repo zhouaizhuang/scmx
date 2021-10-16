@@ -14,7 +14,7 @@
         <view class="f1 g2b3446 b fs34r">我的钱包</view>
         <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
       </view>
-      <view class="f ac pt30r pb30r bdbf0f2fd">
+      <view bindtap="myCoupon" class="f ac pt30r pb30r bdbf0f2fd">
         <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_01.png"></image>
         <view class="f1 g2b3446 b fs34r">我的卡券</view>
         <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
