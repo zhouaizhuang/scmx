@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="h100vh rel" style="background:#999;">
+  <tabbar selectTab="mine"></tabbar>
+</view>

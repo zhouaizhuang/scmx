@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="h100vh rel" style="background:#999;">
+  <map 
+    id="map" 
+    scale="18" 
+    longitude="{{lng}}"
+    latitude="{{lat}}"
+    markers="{{markers}}" 
+    enable-traffic="{{true}}"
+    enable-poi="{{true}}"
+    bindmarkertap="markertap"
+    style="width:100%;height:100vh;">
+  </map>
+
+  <view class="abs zx10 b w100 l0" style="border-radius: 20rpx 20rpx 0 0;">
+    <view class="">123123123</view>
+  </view>
+  <tabbar selectTab="index"></tabbar>
+  <!--
+  <view class="pt30r pl30r pr30r pb30r gf bgff5650 rds10r mt50r w30 f ac xc auto mb30r" bindtap="goMap">开始导航</view>
+  <view class="pt30r pl30r pr30r pb30r gf bgff5650 rds10r mt50r w30 f ac xc auto" bindtap="goPhone">18888179152</view>
+  -->
+</view>
