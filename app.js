@@ -1,7 +1,7 @@
 // app.js
 App({
   onLaunch() {
-    wx.hideHomeButton()
+    // wx.hideHomeButton()
   },
   globalData: {
     userInfo: null

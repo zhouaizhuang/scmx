@@ -15,7 +15,7 @@
 .hidden{position: absolute; visibility: hidden;} .show{position: static; visibility:visible;}
 .clip{position: absolute;clip: rect(0 0 0 0);}
 /* 宽度 */
-.w0{width:0;}     .w5{width:5%;}    .w10{width:10%;}  .w15{width:15%;}  .w20{width:20%;}  .w25{width:25%;}  .w30{width:30%;}
+.w0{width:0;}     .w5{width:5%;}    .w10{width:10%;}  .w15{width:15%;}  .w20{width:20%;}  .w25{width:25%;}  .w28{width:28%;} .w30{width:30%;}
 .w35{width:35%;}  .w40{width:40%;}  .w45{width:45%;}  .w50{width:50%;}  .w55{width:55%;}  .w60{width:60%;}  .w65{width:65%;} 
 .w70{width:70%;}  .w75{width:75%;}  .w80{width:80%;} .w85{width:85%;}   .w90{width:90%;}  .w95{width:95%;}  .w100{width:100%;}
 /* 高度 */
@@ -85,7 +85,7 @@
 .trbl0{top:0;right:0;bottom:0;left:0;}
 .t0{top:0;} .t1r{top:1rpx;} .t2r{top:2rpx;} .t3r{top:3rpx;} .t4r{top:4rpx;} .t5r{top:5rpx;} .t6r{top:6rpx;} .t7r{top:0.07rpx;} .t8r{top:8rpx;} .t9r{top:9rpx;} .t10r{top:10rpx;} .t11r{top:11rpx;} .t12r{top:12rpx;} .t13r{top:13rpx;} .t14r{top:14rpx;} .t15r{top:15rpx;} .t16r{top:16rpx;} .t17r{top:17rpx;} .t18r{top:18rpx;} .t19r{top:19rpx;} .t20r{top:20rpx;} .t21r{top:21rpx;} .t22r{top:22rpx;} .t23r{top:23rpx;} .t24r{top:24rpx;} .t25r{top:25rpx;} .t26r{top:26rpx;} .t27r{top:27rpx;} .t28r{top:28rpx;} .t29r{top:29rpx;} .t30r{top:30rpx;}
 .r0{right:0;} .r1r{right:1rpx;} .r2r{right:2rpx;} .r3r{right:3rpx;} .r4r{right:4rpx;} .r5r{right:5rpx;} .r6r{right:6rpx;} .r7r{right:7rpx;} .r8r{right:8rpx;} .r9r{right:9rpx;} .r10r{right:10rpx;} .r11r{right:11rpx;} .r12r{right:12rpx;} .r13r{right:0.13rpx;} .r14r{right:14rpx;} .r15r{right:15rpx;} .r16r{right:16rpx;} .r17r{right:17rpx;} .r18r{right:18rpx;} .r19r{right:19rpx;} .r20r{right:20rpx;} .r21r{right:21rpx;} .r22r{right:22rpx;} .r23r{right:23rpx;} .r24r{right:24rpx;} .r25r{right:25rpx;} .r26r{right:26rpx;} .r27r{right:27rpx;} .r28r{right:28rpx;} .r29r{right:29rpx;} .r30r{right:30rpx;}
-.b0{bottom:0;} .b1r{bottom:1rpx;} .b2r{bottom:2rpx;} .b3r{bottom:3rpx;} .b4r{bottom:4rpx;} .b5r{bottom:5rpx;} .b6r{bottom:6rpx;} .b7r{bottom:7rpx;} .b8r{bottom:8rpx;} .b9r{bottom:9rpx;} .b10r{bottom:10rpx;} .b11r{bottom:11rpx;} .b12r{bottom:12rpx;} .b13r{bottom:13rpx;} .b14r{bottom:14rpx;} .b15r{bottom:15rpx;} .b16r{bottom:16rpx;} .b17r{bottom:17rpx;} .b18r{bottom:18rpx;} .b19r{bottom:19rpx;} .b20r{bottom:20rpx;} .b21r{bottom:21rpx;} .b22r{bottom:22rpx;} .b23r{bottom:23rpx;} .b24r{bottom:24rpx;} .b25r{bottom:25rpx;} .b26r{bottom:26rpx;} .b27r{bottom:27rpx;} .b28r{bottom:28rpx;} .b29r{bottom:29rpx;} .b30r{bottom:30rpx;}
+.b0{bottom:0;} .b1r{bottom:1rpx;} .b2r{bottom:2rpx;} .b3r{bottom:3rpx;} .b4r{bottom:4rpx;} .b5r{bottom:5rpx;} .b6r{bottom:6rpx;} .b7r{bottom:7rpx;} .b8r{bottom:8rpx;} .b9r{bottom:9rpx;} .b10r{bottom:10rpx;} .b11r{bottom:11rpx;} .b12r{bottom:12rpx;} .b13r{bottom:13rpx;} .b14r{bottom:14rpx;} .b15r{bottom:15rpx;} .b16r{bottom:16rpx;} .b17r{bottom:17rpx;} .b18r{bottom:18rpx;} .b19r{bottom:19rpx;} .b20r{bottom:20rpx;} .b21r{bottom:21rpx;} .b22r{bottom:22rpx;} .b23r{bottom:23rpx;} .b24r{bottom:24rpx;} .b25r{bottom:25rpx;} .b26r{bottom:26rpx;} .b27r{bottom:27rpx;} .b28r{bottom:28rpx;} .b29r{bottom:29rpx;} .b30r{bottom:30rpx;} .b40r{bottom:40rpx;} .b50r{bottom:50rpx;}
 .l0{left:0;} .l1r{left:1rpx;} .l2r{left:2rpx;} .l3r{left:3rpx;} .l4r{left:4rpx;} .l5r{left:5rpx;} .l6r{left:0.06rpx;} .l7r{left:7rpx;} .l8r{left:8rpx;} .l9r{left:9rpx;} .l10r{left:10rpx;} .l11r{left:11rpx;} .l12r{left:12rpx;} .l13r{left:13rpx;} .l14r{left:14rpx;} .l15r{left:15rpx;} .l16r{left:16rpx;} .l17r{left:17rpx;} .l18r{left:18rpx;} .l19r{left:19rpx;} .l20r{left:20rpx;} .l21r{left:21rpx;} .l22r{left:22rpx;} .l23r{left:23rpx;} .l24r{left:24rpx;} .l25r{left:25rpx;} .l26r{left:26rpx;} .l27r{left:27rpx;} .l28r{left:0.28rpx;} .l29r{left:29rpx;} .l30r{left:30rpx;}
 /*百分比定位*/
 .t10{top:10%;} .t15{top:15%;} .t20{top:20%;} .t25{top:25%;} .t30{top:30%;} .t35{top:35%;} .t40{top:40%;} .t45{top:45%;} .t50{top:50%;}
@@ -106,6 +106,6 @@
 .disable{opacity:0.5; pointer-events:none;}
 .disable:hover{cursor:no-drop;}
 /* 边框圆角 */
-.rds1r{border-radius:1rpx;}   .rds2r{border-radius:2rpx;}  .rds5r{border-radius:5rpx;}    .rds10r{border-radius:10rpx;}  .rds15r{border-radius:15rpx;}  .rds20r{border-radius:20rpx;}  .rds30r{border-radius:30rpx;}  .rds40r{border-radius:40rpx;}  .rds50{border-radius:50%;}
+.rds1r{border-radius:1rpx;}   .rds2r{border-radius:2rpx;}  .rds5r{border-radius:5rpx;}    .rds10r{border-radius:10rpx;}  .rds15r{border-radius:15rpx;}  .rds20r{border-radius:20rpx;}  .rds30r{border-radius:30rpx;}  .rds40r{border-radius:40rpx;} .rds50r{border-radius:50rpx;}   .rds50{border-radius:50%;}
 /* 表单必填*号 */
 .require::before{ content: '*';display: inline-block;margin-right: 4rpx;line-height: 1;font-family: SimSun;font-size: 14rpx;color: #ed4014}

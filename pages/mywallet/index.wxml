@@ -6,7 +6,7 @@
         <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>500</view>
         <view class="w100 gf op6 fs24r">可用余额</view>
       </view>
-      <view class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">充值</view>
+      <view bindtap="goPay" class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">充值</view>
     </view>
   </view>
   <!--内容主体-->

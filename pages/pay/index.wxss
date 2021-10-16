@@ -1,0 +1,4 @@
+/* pages/pay/index.wxss */
+.linear6766e5{
+  background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);
+}

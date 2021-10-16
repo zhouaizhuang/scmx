@@ -4,7 +4,8 @@
     "pages/qrcode/index",
     "pages/mine/index",
     "pages/logs/logs",
-    "pages/mywallet/index"
+    "pages/mywallet/index",
+    "pages/pay/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
