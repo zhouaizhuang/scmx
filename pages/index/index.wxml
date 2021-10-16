@@ -28,7 +28,7 @@
           <view class="w100 g2b3446 fs34r b mb15r">世贸·香槟湖南区</view>
           <view class="w100 fs26r g7c8094">常州市新北区太湖东路三井街道53-1101F</view>
         </view>
-        <view class="f rw" style="width:67rpx;">
+        <view bindtap="openLocation" class="f rw" style="width:67rpx;">
           <image style="width:67rpx;height:70rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_direction.png"></image>
           <view class="fs24r b g2b3446">导航</view>
         </view>

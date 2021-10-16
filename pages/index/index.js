@@ -10,7 +10,7 @@ Page({
     showLocation: true,
     // subkey: "SS5BZ-YG23F-DHJJH-JJ4QS-SGN76-5SGIV",
     clickPointItem: {}, // 选择的点位
-    isShowDetail: true, // 是否显示详情
+    isShowDetail: false, // 是否显示详情
     markers: [
       { // 绘制浮标，传入JSON支持多个
         iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
@@ -63,14 +63,18 @@ Page({
     ]
   },
   mapCtx: null,
+  // 点击标记点的回调
   markertap(e) { // 这是一个事件，在wxml中绑定这个事件，点击浮标后
     // console.log(e)
     const markerId = e.markerId || e.detail.markerId
     console.log(markerId)
-    this.setData({ isShowDetail: true, clickPointItem: {id: markerId} })
+    setTimeout(() => {
+      this.setData({ isShowDetail: true, clickPointItem: {id: markerId, longitude: 119.97257, latitude: 31.83155, name: '常州市市政府1号', address:'详细地址128-1'} })
+    }, 200)
     // const checkedPoint = markers.find(item => item.id == markerId)
     // 根据id调借口查出详情数据
   },
+  // 用户移动地图的监听回调
   regionDidChange(e) {
     this.mapCtx.getCenterLocation({
       success: function(res){
@@ -79,6 +83,7 @@ Page({
       }
     })
   },
+  // 回到用户当前定位所在位置
   moveToLocation(){
     const {lng, lat} = this.data
     this.mapCtx.moveToLocation({
@@ -92,28 +97,25 @@ Page({
       }
     })
   },
+  // 点击地图空白处
   tapBlank(){
-    setTimeout(() => {
-      if(JSON.stringify(this.data.clickPointItem) === '{}') {
-        this.setData({ isShowDetail: false })
-      }
-      this.setData({ clickPointItem: {} })
-    }, 200)
+    this.setData({ isShowDetail: false })
   },
-  // 事件处理函数
-  // bindViewTap() {
-  //   wx.navigateTo({
-  //     url: '../logs/logs'
-  //   })
-  // },
+  // 开始导航
+  openLocation(){
+    const {longitude, latitude, name,address} = this.data.clickPointItem
+    console.log(longitude, latitude)
+    wx.openLocation({ //此设置属于高级APi,可以打开微信内置地图组件
+      latitude,
+      longitude,
+      name,
+      address
+    })
+  },
   async onLoad() {
     this.mapCtx = wx.createMapContext('myMap')
     const { lng, lat } = await getLocation()
     // console.log(lng, lat)
-    // wx.openLocation({ //此设置属于高级APi,可以打开微信内置地图组件
-    //   latitude: lat,
-    //   longitude: lng,
-    // });
     // const { lat, lng } = await address2LatLng('常州化龙网络科技股份有限公司')
     this.setData({lat, lng})
     console.log(lat, lng)
@@ -154,25 +156,4 @@ Page({
       phoneNumber: '18888179152' //仅为示例，并非真实的电话号码
     })
   }
-  // getUserProfile(e) {
-  //   // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-  //   wx.getUserProfile({
-  //     desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-  //     success: (res) => {
-  //       console.log(res)
-  //       this.setData({
-  //         userInfo: res.userInfo,
-  //         hasUserInfo: true
-  //       })
-  //     }
-  //   })
-  // },
-  // getUserInfo(e) {
-  //   // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-  //   console.log(e)
-  //   this.setData({
-  //     userInfo: e.detail.userInfo,
-  //     hasUserInfo: true
-  //   })
-  // }
 })
