@@ -1,0 +1,20 @@
+<view class="h100vh rel" style="background:#fff;">
+  <view class="pl30r pr30r pt30r">
+    <view class="icCardBg mb30r auto">
+      <view class="f ac pl30r pt50r pb50r pr30r">
+        <image style="width:100rpx;height:100rpx;" class="mr30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png"></image>
+        <view class="fs24r gf mr15r" style="transform:translateY(10rpx);">余额</view>
+        <view class="f1 fs50r gf b">500</view>
+        <view class="bgf rds30r g2b3446 b fs28r" style="padding:11rpx 38rpx;">充值</view>
+      </view>
+    </view>
+    <view class="icCardBgBlue mb30r auto">
+      <view class="f ac pl30r pt50r pb50r pr30r">
+        <image style="width:100rpx;height:100rpx;" class="mr30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png"></image>
+        <view class="fs24r gf mr15r" style="transform:translateY(10rpx);">余额</view>
+        <view class="f1 fs50r gf b">500</view>
+        <view class="bgf rds30r g2b3446 b fs28r" style="padding:11rpx 38rpx;">充值</view>
+      </view>
+    </view>
+  </view>
+</view>

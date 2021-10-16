@@ -35,6 +35,12 @@
           "pathName": "pages/coupon/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "ic卡",
+          "pathName": "pages/icCard/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

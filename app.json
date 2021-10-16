@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/mywallet/index",
     "pages/pay/index",
-    "pages/coupon/index"
+    "pages/coupon/index",
+    "pages/icCard/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
