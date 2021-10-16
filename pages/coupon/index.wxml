@@ -50,8 +50,8 @@
     <view class="fixed b40r tc g7c8094 fs30r w100">不使用优惠券</view>
   </view>
   <!--已使用-->
-  <view wx:if="{{currentTab =='1'}}" style="margin-top:120rpx;">
-    <view class="auto mb30r rel" class="rel" style="height:160rpx;width:650rpx;">
+  <view wx:if="{{currentTab =='1'}}" class="rel" style="margin-top:120rpx;">
+    <view class="auto mb30r rel" style="height:160rpx;width:650rpx;">
       <image class="abs h100 w100 l0 t0 zx10 op2" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card.png"></image>
       <image class="abs h100 w100 l0 t0 zx20" src="../images/scmx_oupon_mask.png"></image>
       <image class="abs zx30 t50 ty-50" style="right:100rpx;width:96rpx;height:81rpx;" src="../images/scmx_used_tag.png"></image>
