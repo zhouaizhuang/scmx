@@ -17,3 +17,9 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.bgimg{
+  height:455rpx;
+  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_top.png') no-repeat;
+  background-size:100%;
+}

@@ -57,24 +57,37 @@ Page({
         longitude: 119.97259, //纬度
         width: 30,
         height:38
-      },
-      {
-        iconPath: '../images/scmx_loc.png', //浮标图片路径，推荐png图片
-        id: 7, // Id支持多个，方便后期点击浮标获取相关信息
-        latitude: 31.830522, // 经度
-        longitude: 119.97259, //纬度
-        width: 41,
-        height:48
       }
     ]
   },
-
+  mapCtx: null,
   markertap(e) { // 这是一个事件，在wxml中绑定这个事件，点击浮标后
     // console.log(e)
     const markerId = e.markerId || e.detail.markerId
     console.log(markerId)
     // const checkedPoint = markers.find(item => item.id == markerId)
     // 根据id调借口查出详情数据
+  },
+  regionDidChange(e) {
+    this.mapCtx.getCenterLocation({
+      success: function(res){
+        // console.log(res)
+        console.log(res.latitude + ',' + res.longitude)
+      }
+    })
+  },
+  moveToLocation(){
+    const {lng, lat} = this.data
+    this.mapCtx.moveToLocation({
+      longitude:lng,
+      latitude: lat,
+      success: res => {
+        console.log(res)
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
   },
   // 事件处理函数
   // bindViewTap() {
@@ -83,11 +96,8 @@ Page({
   //   })
   // },
   async onLoad() {
-    // if (wx.getUserProfile) {
-    //   this.setData({
-    //     canIUseGetUserProfile: true
-    //   })
-    // }
+    this.mapCtx = wx.createMapContext('myMap')
+
     const { lng, lat } = await getLocation()
     // console.log(lng, lat)
     // wx.openLocation({ //此设置属于高级APi,可以打开微信内置地图组件

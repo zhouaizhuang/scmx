@@ -1,19 +1,47 @@
 <!--index.wxml-->
-<view class="h100vh rel" style="background:#999;">
+<view class="h100vh rel ovh" style="background:#999;">
+  <!--https://www.jianshu.com/p/a05fa4cad796-->
   <map 
-    id="map" 
+    id="myMap" 
     scale="18" 
     longitude="{{lng}}"
     latitude="{{lat}}"
     markers="{{markers}}" 
     enable-traffic="{{true}}"
     enable-poi="{{true}}"
+    show-location="{{true}}"
     bindmarkertap="markertap"
-    style="width:100%;height:100vh;">
+    bindregionchange="regionDidChange"
+    style="width:100%;height:100vh;"
+  >
+    <cover-image style="width:82rpx;height:97rpx;" class="abs l50 t50 txy-50" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_loc.png"></cover-image>
   </map>
-
-  <view class="abs zx10 b w100 l0" style="border-radius: 20rpx 20rpx 0 0;">
-    <view class="">123123123</view>
+  <!--当前选择的点的详细信息-->
+  <view class="abs zx100 w100 l0 bgimg" style="bottom:110rpx;border-radius: 20rpx 20rpx 0 0;">
+    <image style="width:235rpx;height:80rpx;top:-90rpx;" class="abs l30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ploblem.png"></image>
+    <image bindtap="moveToLocation" style="width:80rpx;height:80rpx;top:-90rpx;" class="abs r30r" src="../images/scmx_go_center.png"></image>
+    <view style="padding:60rpx 48rpx 20rpx 50rpx;">
+      <view class="f mb25r">
+        <image style="width:120rpx;height:120rpx;" class="rds15r mr25r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_top.png"></image>
+        <view class="f1 f rw">
+          <view class="w100 g2b3446 fs34r b mb15r">世贸·香槟湖南区</view>
+          <view class="w100 fs26r g7c8094">常州市新北区太湖东路三井街道53-1101F</view>
+        </view>
+        <view class="f rw" style="width:67rpx;">
+          <image style="width:67rpx;height:70rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_direction.png"></image>
+          <view class="fs24r b g2b3446">导航</view>
+        </view>
+      </view>
+      <view class="bgf5f6fa f mb28r ac pt22r pb22r pl28r pr28r rds10r">
+        <view class="f1 f ac">
+          <image style="width:38rpx;height:43rpx;" class="mr18r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png"></image>
+          <view class="g2b3446 b fs26r">米仓满，可购买</view>
+        </view>
+      </view>
+      <view class="bgf5f6fa f ac pt22r pb22r pl28r pr28r rds10r g2b3446 b fs26r">
+        充值米卡享优惠，15元/kg，75元/5kg
+      </view>
+    </view>
   </view>
   <tabbar selectTab="index"></tabbar>
   <!--
