@@ -1,0 +1,7 @@
+/* pages/payDetail/index.wxss */
+.payDetailBg{
+  height:638rpx;
+  width: 651rpx;
+  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_box_bg.png') no-repeat;
+  background-size:100%;
+}

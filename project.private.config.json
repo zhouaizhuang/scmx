@@ -47,6 +47,12 @@
           "pathName": "pages/myOrder/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "支付详情",
+          "pathName": "pages/payDetail/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
