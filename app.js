@@ -1,7 +1,8 @@
 // app.js
+import { checkUpdateVersion } from "./api.js"
 App({
   onLaunch() {
-    // wx.hideHomeButton()
+    checkUpdateVersion()
   },
   globalData: {
     userInfo: null
