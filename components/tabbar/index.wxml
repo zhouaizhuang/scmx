@@ -1,4 +1,4 @@
-<view class="f fixed zx1000 b0 w100 l0 b" style="background: #fff;border: 1rpx solid #F5F6FA;box-shadow: 0px -5px 20px 0px rgba(234, 236, 241, 0.5);">
+<view class="f fixed zx20 b0 w100 l0 b" style="background: #fff;border: 1rpx solid #F5F6FA;box-shadow: 0px -5px 20px 0px rgba(234, 236, 241, 0.5);">
   <view bindtap="goIndex" class="f1 f rw ac xc pt20r pb20r">
     <image src="{{selectTab == 'index'? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_home_light.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_home_grew.png'}}" class="mb10r" style="width:44rpx;height:44rpx;"></image>
     <view class="w100 tc fs22r {{ selectTab == 'index' ? 'g2326aa' : 'g7c8094' }}">首页</view>

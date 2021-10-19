@@ -1,4 +1,5 @@
 import { navigateTo } from "../../api"
+import { get } from "../../libs/network"
 // pages/mine/index.js
 Page({
 
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShowLogin: false, // 是否显示登录提示
   },
   goWallet(){
     navigateTo('../mywallet/index')

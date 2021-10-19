@@ -3,7 +3,7 @@
   <view class="bgtop rel zx1">
     <view class="f ac pt30r pl40r pr40r">
       <image style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
-      <view class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">请先登录</view>
+      <view class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r" bindtap="showLogin">请先登录</view>
     </view>
   </view>
   <!--个人中心菜单-->
@@ -36,5 +36,6 @@
       </view>
     </view>
   </view>
+  <login isShowLogin="{{isShowLogin}}" />
   <tabbar selectTab="mine"></tabbar>
 </view>

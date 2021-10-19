@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "tabbar": "../../components/tabbar/index"
+    "tabbar": "../../components/tabbar/index",
+    "login": "../../components/login/index"
   },
   "navigationBarTitleText": "个人中心"
 }

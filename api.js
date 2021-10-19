@@ -5,7 +5,7 @@ export const getUserProfile = function () {
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       lang: 'zh_CN',
-      success: res => resolve(res.userInfo),
+      success: res => resolve(res),
       fail: err => reject(err)
     })
   })
