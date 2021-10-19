@@ -1,4 +1,4 @@
-import { navigateTo } from "../../api"
+import { getLocalStorage, navigateTo } from "../../api"
 import { get } from "../../libs/network"
 // pages/mine/index.js
 Page({
@@ -14,6 +14,9 @@ Page({
   },
   closeLogin(){
     this.setData({isShowLogin:false})
+    const userInfo = getLocalStorage('userInfo') || {}
+    const token = getLocalStorage('token') || ''
+    this.setData({userInfo, token})
   },
   goWallet(){
     navigateTo('../mywallet/index')
@@ -32,6 +35,9 @@ Page({
    */
   onLoad: function (options) {
     wx.hideHomeButton()
+    const userInfo = getLocalStorage('userInfo') || {}
+    const token = getLocalStorage('token') || ''
+    this.setData({userInfo, token})
   },
 
   /**
