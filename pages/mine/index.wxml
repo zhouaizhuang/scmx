@@ -36,6 +36,6 @@
       </view>
     </view>
   </view>
-  <login isShowLogin="{{isShowLogin}}" />
+  <login isShowLogin="{{isShowLogin}}" bind:closeLogin="closeLogin" />
   <tabbar selectTab="mine"></tabbar>
 </view>

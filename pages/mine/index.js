@@ -9,6 +9,12 @@ Page({
   data: {
     isShowLogin: false, // 是否显示登录提示
   },
+  showLogin(){
+    this.setData({isShowLogin:true})
+  },
+  closeLogin(){
+    this.setData({isShowLogin:false})
+  },
   goWallet(){
     navigateTo('../mywallet/index')
   },

@@ -27,6 +27,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    closeLogin(){
+      this.triggerEvent('closeLogin');
+    },
     getPhoneNumber(e){
       const { encryptedData, iv } =  e.detail
       const { nick_name, avatar } = this.data
