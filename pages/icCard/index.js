@@ -1,3 +1,5 @@
+import { post } from "../../libs/network"
+
 // pages/icCard/index.js
 Page({
 
@@ -5,14 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cardList:[]
   },
-
+  async getIcCard(){
+    let cardList = await post('/wap/ic/list')
+    cardList = cardList.map(v => {
+      return {
+        ...v,
+        _price: Number(v.price)
+      }
+    })
+    this.setData({cardList})
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getIcCard()
   },
 
   /**

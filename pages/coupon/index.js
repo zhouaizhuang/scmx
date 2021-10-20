@@ -11,16 +11,19 @@ Page({
     couponNotUsed: {
       list: [],
       page: 1,
+      isEnd: false,
       isLoad: false,
     },
     couponUsed:{
       list: [],
       page: 1,
+      isEnd: false,
       isLoad: false,
     },
     couponOverTime: {
       list: [],
       page: 1,
+      isEnd: false,
       isLoad: false,
     },
     page:1, // 默认当前加载的页面 
@@ -34,28 +37,37 @@ Page({
     let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponNotUsed.page}`, { status: 1 })
     list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
     const newList = [...this.data.couponNotUsed.list, ...list]
-    this.setData({
-      ['couponNotUsed.list']: newList,
-      ['couponNotUsed.isLoad']:true
-    })
+    const newCouponNotUsed = {
+      ...this.data.couponNotUsed,
+      list: newList,
+      isLoad: true,
+      isEnd: !list.length
+    }
+    this.setData({ couponNotUsed: newCouponNotUsed })
   },
   async getUsed(){
     let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponUsed.page}`, { status: 2 })
     list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
     const newList = [...this.data.couponUsed.list, ...list]
-    this.setData({
-      ['couponUsed.list']: newList,
-      ['couponUsed.isLoad']:true
-    })
+    const newCouponUsed = {
+      ...this.data.couponUsed,
+      list: newList,
+      isLoad: true,
+      isEnd: !list.length
+    }
+    this.setData({ couponUsed: newCouponUsed })
   },
   async getOverTime(){
     let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponOverTime.page}`, { status: 3 })
     list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
     const newList = [...this.data.couponOverTime.list, ...list]
-    this.setData({
-      ['couponOverTime.list']: newList,
-      ['couponOverTime.isLoad']:true
-    })
+    const newCouponOverTime = {
+      ...this.data.couponOverTime,
+      list: newList,
+      isLoad: true,
+      isEnd: !list.length
+    }
+    this.setData({ couponOverTime:newCouponOverTime })
   },
   /**
    * 生命周期函数--监听页面加载
