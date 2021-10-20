@@ -33,14 +33,15 @@ Component({
     getPhoneNumber(e){
       const { encryptedData, iv } =  e.detail
       const { nick_name, avatar } = this.data
-      if(String(encryptedData) && String(iv) && nick_name && avatar) {
+      if(encryptedData && iv && nick_name && avatar) {
         wx.login({
           success: async res => {
             const { code } = res
             try {
+              // console.log(encryptedData, iv, code,nick_name, avatar)
               post('/wap/auth/xcxlogin', { encryptedData, iv, code,nick_name, avatar}).then(res => {
                 const {amount, avatar,created_at, nick_name, openid, phone } = res
-                this.setData({isShowLogin: !phone})
+                this.closeLogin()
                 setLocalStorage('userInfo', { nick_name, avatar, phone, openid, created_at, amount })
               }).catch(err => {
                 setLocalStorage('userInfo', {})
@@ -59,6 +60,7 @@ Component({
       const { nickName:nick_name, avatarUrl: avatar} = userInfo || {}
       if(nick_name && avatar) {
         this.setData({ nick_name, avatar, isGetUserInfo: true })
+        setLocalStorage('userInfo', { nick_name, avatar})
       }
     },
   }
