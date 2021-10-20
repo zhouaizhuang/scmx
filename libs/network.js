@@ -24,7 +24,7 @@ export const request = async function (url, options = {}) {
     method: 'GET',
     header: {
       "Content-Type": "Content-type:json;charset=utf-8",
-      "token": localToken
+      "Authorization": localToken
     }, // 默认值 ,另一种是 "content-type": "application/x-www-form-urlencoded"
     ...options
   }
@@ -40,7 +40,7 @@ export const request = async function (url, options = {}) {
       success: res => {
         const { code, message = '', token = '' } = res.data || {}
         if(code === 200) {
-          if(token !== localToken) {
+          if(token && (token !== localToken)) {
             setLocalStorage('token', token)
           }
           resolve(res.data)

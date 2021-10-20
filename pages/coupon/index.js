@@ -1,4 +1,5 @@
 // pages/coupon/index.js
+import { post } from "../../libs/network"
 Page({
 
   /**
@@ -6,18 +7,63 @@ Page({
    */
   data: {
     currentTab: '0',
-    currentTabClass:'l18', 
+    currentTabClass:'l18',
+    couponNotUsed: {
+      list: [],
+      page: 1,
+      isLoad: false,
+    },
+    couponUsed:{
+      list: [],
+      page: 1,
+      isLoad: false,
+    },
+    couponOverTime: {
+      list: [],
+      page: 1,
+      isLoad: false,
+    },
+    page:1, // 默认当前加载的页面 
   },
   selectTab(e) {
     const { index } = e.currentTarget.dataset
     const mapClass= ['l18', 'l48', 'l78']
     this.setData({currentTab: index, currentTabClass:mapClass[index]})
   },
+  async getNotUsed(){
+    let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponNotUsed.page}`, { status: 1 })
+    list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
+    const newList = [...this.data.couponNotUsed.list, ...list]
+    this.setData({
+      ['couponNotUsed.list']: newList,
+      ['couponNotUsed.isLoad']:true
+    })
+  },
+  async getUsed(){
+    let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponUsed.page}`, { status: 2 })
+    list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
+    const newList = [...this.data.couponUsed.list, ...list]
+    this.setData({
+      ['couponUsed.list']: newList,
+      ['couponUsed.isLoad']:true
+    })
+  },
+  async getOverTime(){
+    let { list } = await post(`/wap/coupon/list?expand=coupon&page=${this.data.couponOverTime.page}`, { status: 3 })
+    list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
+    const newList = [...this.data.couponOverTime.list, ...list]
+    this.setData({
+      ['couponOverTime.list']: newList,
+      ['couponOverTime.isLoad']:true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getNotUsed()
+    this.getUsed()
+    this.getOverTime()
   },
 
   /**
@@ -59,7 +105,20 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    const { currentTab } = this.data
+    if(currentTab == '0') {
+      const { page } = this.data.couponNotUsed
+      this.setData({['couponNotUsed.page']: page + 1})
+      this.getNotUsed()
+    } else if(currentTab == '1'){
+      const { page } = this.data.couponUsed
+      this.setData({['couponUsed.page']: page + 1})
+      this.getUsed()
+    } else {
+      const { page } = this.data.couponOverTime
+      this.setData({['couponOverTime.page']: page + 1})
+      this.getOverTime()
+    }
   },
 
   /**
