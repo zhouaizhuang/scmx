@@ -1,5 +1,6 @@
 import { post } from "../../libs/network"
 import { navigateTo, showToast, requestPayment, getLocalStorage } from "../../api"
+import { safeGet, range, round } from "../../common"
 
 // pages/payDetail/index.js
 Page({
@@ -9,9 +10,14 @@ Page({
    */
   data: {
     options: {}, // 页面参数
+    info:{},
+    showTotal: 0,
     isShowStatusMask: false, // 是否显示付款状态弹窗
     paySuccess: 0, // 0：未付款 1：付款成功  2：付款失败
     payType: 1, // 1:微信支付   3钱包支付   4 IC卡支付
+    isShowCoupon:false, // 默认不显示优惠券选择列表
+    couponNotUsed: [], // 未使用的优惠券,
+    checkedCoupon: {coupon:{}}, // 选择的优惠券
   },
   showLogin(){
     this.setData({isShowLogin:true})
@@ -32,14 +38,19 @@ Page({
   payIcCard(){
     this.setData({payType: 4})
   },
-  goCoupon(){
-    navigateTo('../coupon/index')
+  openCoupon(){
+    this.setData({isShowCoupon: true})
+    this.getCoupon()
+  },
+  closeCoupon(){
+    this.setData({isShowCoupon: false})
   },
   async pay(){
     const token = getLocalStorage('token') || ''
     if(!token) { return this.showLogin() }
     const { rice_amount, machine_id } = this.data.options
-    const {appId, nonceStr, package:pack, paySign, signType, timeStamp } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: '', pay_type: 1, member_ic_id:''})
+    const {id} = this.data.checkedCoupon
+    const {appId, nonceStr, package:pack, paySign, signType, timeStamp } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: 1, member_ic_id:''})
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
       this.setData({paySuccess:1, isShowStatusMask: true})
@@ -54,23 +65,56 @@ Page({
   goPayList(){
     navigateTo('../myOrder/index')
   },
+  nouUseCoupon(){
+    const couponNotUsed = this.data.couponNotUsed.map(item => {
+      item.isChecked = false
+      return item
+    })
+    this.setData({couponNotUsed, checkedCoupon: {}})
+  },
+  selectCoupon(e){
+    const {item} = e.currentTarget.dataset
+    const {id} = item
+    const couponNotUsed = this.data.couponNotUsed.map(item => {
+      if(item.id == id) {
+        item.isChecked = true
+        const total_price = safeGet(() => this.data.info.total_price, 0) - Number(safeGet(() => item.coupon.amount,0))
+        const showTotal = range(round(total_price, 2), 0)
+        // console.log(showTotal)
+        this.setData({checkedCoupon:item, showTotal})
+      } else {
+        item.isChecked = false
+      }
+      return item
+    })
+    this.setData({couponNotUsed})
+  },
+  async getCoupon(){
+    const {rice_amount} = this.data.options
+    let list = await post('/wap/coupon/valid?expand=coupon', { price: rice_amount })
+    list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
+    this.setData({ couponNotUsed: list })
+  },
   async getDetail(){
     try{
       const {rice_amount, machine_id} = this.data.options
       let info = await post('/wap/order/info', {rice_amount, machine_id})
       info._phone = info.phone.slice(0, 3) + '****' + info.phone.slice(-4) 
-      this.setData({ info })
+      this.setData({ info, showTotal:info.total_price })
+      this.getCoupon()
     } catch(e) {
       showToast(e)
     }
   },
-
+  empty(){},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
     const { rice_amount, machine_id } = options
     this.setData({options})
+    const token = getLocalStorage('token') || ''
+    if(!token) { return this.showLogin() }
     this.getDetail()
   },
 

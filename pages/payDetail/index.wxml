@@ -17,7 +17,7 @@
       <view class="f mb30r xe">
         <view class="g2b3446 fs26r">优惠券：</view>
         <view class="f1"></view>
-        <view bindtap="goCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs22r gf" style="background: linear-gradient(-90deg, #FFAB58 0%, #FF8B36 100%);">未选优惠券，最高10元可用 ></view>
+        <view bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs22r gf" style="background: linear-gradient(-90deg, #FFAB58 0%, #FF8B36 100%);">{{checkedCoupon.coupon.amount ? '-￥' + checkedCoupon.coupon.amount : '未选优惠券，最高10元可用'}} ></view>
       </view>
       <view class="bgf5f6fa mb30r" style="width:500rpx;height:1rpx;"></view>
       <view class="f fs28r mb20r">
@@ -63,7 +63,7 @@
   </view>
   <view class="fixed w100 b0 l0">
     <view class="f ac xb pt30r pb30r pr50r pl30r">
-      <view class="g2b3446 fs24r">合计：<text class="pl10r gff8b36 b fs34r"><text class="fs24r" style="transform: translateY(10rpx);">￥</text>{{info.total_price}}</text></view>
+      <view class="g2b3446 fs24r">合计：<text class="pl10r gff8b36 b fs34r"><text class="fs24r" style="transform: translateY(10rpx);">￥</text>{{showTotal}}</text></view>
       <view bindtap="pay" class="rds40r fs28r gf f ac xc" style="width:200rpx;height:68rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);">付款</view>
     </view>
   </view>
@@ -76,6 +76,37 @@
       <view wx:else class="f xc">
         <view bindtap="goPayList" class="mr20r f ac xc b rds50r bgf5f6fa g7c8094 fs30r" style="width:220rpx;height:88rpx;">查看订单</view>
         <view class="f ac xc gf b fs30r rds50r" style="width:220rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">重新支付</view>
+      </view>
+    </view>
+  </view>
+  <view bindtap="closeCoupon" wx:if="{{isShowCoupon}}" class="fixed trbl0 zx10" style="background-color:rgba(0,0,0,.7);">
+    <view catch:tap="empty" class="bgf abs zx20 b0 w100 ovya trans3 {{isShowCoupon ? 'ty0' : 'ty130'}}" style="max-height:900rpx;border-radius: 40rpx 40rpx 0px 0px;">
+      <view class="pt50r pl50r pr50r pb20r">
+        <view class="f mb30r">
+          <view class="f1 fs34r b g2b3446">选择优惠券</view>
+          <view bindtap="closeCoupon" class="rel" style="transform:rotate(45deg);width:30rpx;height:30rpx;">
+            <view class="abs l50 t0 h100 bg656c7d" style="width:2rpx;"></view>
+            <view class="abs t50 l0 w100 bg656c7d" style="height:2rpx;"></view>
+          </view>
+        </view>
+        <view class="fs26r mb35r">已选中推荐优惠，使用优惠券{{checkedCoupon.coupon.amount ? 1 : 0}}张，共抵扣<text class="gff8b36">￥{{checkedCoupon.coupon.amount ||0}}</text></view>
+        <view bindtap="selectCoupon" data-item="{{item}}" wx:for="{{couponNotUsed}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="couponbg auto mb30r">
+          <view class="f ac pl50r pr40r pt25r">
+            <view class="f rw fs50r gff8b36" style="width:170rpx;">
+              <view class="w100 mb5r b"><text class="fs24r">￥</text>{{item.coupon.amount || ''}}</view>
+              <view class="w100 g7c8094 fs24r" wx:if="{{item._perLimit > 0}}">满{{item.coupon.perLimit}}可用</view>
+              <view class="w100 g7c8094 fs24r" wx:else>无使用门槛</view>
+            </view>
+            <view class="f1 f rw mt10r">
+              <view class="w100 g393e51 mb15r fs30r b">{{item.coupon.name}}</view>
+              <view wx:if="{{item.coupon.today_expire}}" class="w100 gff8b36 fs24r">今日到期</view>
+              <view wx:else class="w100 gff8b36 fs24r">有效期：{{item.coupon.start_time}}-{{item.coupon.end_time}}</view>
+            </view>
+            <image wx:if="{{item.isChecked}}" style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
+            <image wx:else style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>
+          </view>
+        </view>
+        <view bindtap="nouUseCoupon" class="pt20r pb20r tc g7c8094 fs30r w100">不使用优惠券</view>
       </view>
     </view>
   </view>

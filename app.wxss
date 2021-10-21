@@ -39,7 +39,7 @@
 .bdbe{border-bottom: 1rpx solid #eee;} .bdbf0f2fd{ border-bottom: 1rpx solid #f0f2fd;}
 /* 背景色 */
 .bgf{background-color: #fff;} .bgf5{background-color: #f5f5f5;} .bgecf2ff{background-color: #ecf2ff;} .bgff5650{background-color: #ff5650;}
-.bgf5f6fa{background-color:#f5f6fa;}
+.bgf5f6fa{background-color:#f5f6fa;} .bg656c7d{background-color: #656c7d;}
 .imgBg{width:100%;margin:-0.1rem 0;background-repeat:no-repeat;background-size:100%;}
 /*遮罩层*/
 .mask6{position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background-color: rgba(0, 0, 0, .6);overflow:hidden;}

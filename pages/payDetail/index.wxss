@@ -5,3 +5,9 @@
   background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_box_bg.png') no-repeat;
   background-size:100%;
 }
+.couponbg{
+  height:160rpx;
+  width:650rpx;
+  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card.png') no-repeat;
+  background-size:100%;
+}
