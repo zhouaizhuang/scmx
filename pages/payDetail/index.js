@@ -71,6 +71,7 @@ Page({
       return item
     })
     this.setData({couponNotUsed, checkedCoupon: {}})
+    this.closeCoupon()
   },
   selectCoupon(e){
     const {item} = e.currentTarget.dataset
