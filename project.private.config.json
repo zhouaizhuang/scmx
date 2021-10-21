@@ -51,7 +51,7 @@
         {
           "name": "支付详情",
           "pathName": "pages/payDetail/index",
-          "query": "",
+          "query": "rice_amount=1&machine_id=A1 86 49 01 00 55 07 00 0C CE 4D 10 00 00 00",
           "scene": null
         }
       ]

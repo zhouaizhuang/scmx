@@ -13,7 +13,7 @@ Page({
     isShowDetail: false, // 是否显示详情
     markers: [
       { // 绘制浮标，传入JSON支持多个
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 1, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.83052, // 经度
         longitude: 119.97147, //纬度
@@ -21,7 +21,7 @@ Page({
         height:38
       },
       {
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 2, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.83055, // 经度
         longitude: 119.97157, //纬度
@@ -29,7 +29,7 @@ Page({
         height:38
       },
       { // 绘制浮标，传入JSON支持多个
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 3, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.83155, // 经度
         longitude: 119.97157, //纬度
@@ -37,7 +37,7 @@ Page({
         height:38
       },
       {
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 4, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.83152, // 经度
         longitude: 119.97257, //纬度
@@ -45,7 +45,7 @@ Page({
         height:38
       },
       {
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 5, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.831022, // 经度
         longitude: 119.97259, //纬度
@@ -53,7 +53,7 @@ Page({
         height:38
       },
       {
-        iconPath: '../images/scmx_has_mi.png', //浮标图片路径，推荐png图片
+        iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         id: 6, // Id支持多个，方便后期点击浮标获取相关信息
         latitude: 31.830522, // 经度
         longitude: 119.97259, //纬度
@@ -90,7 +90,7 @@ Page({
       longitude:lng,
       latitude: lat,
       success: res => {
-        console.log(res)
+        console.lof(res)
       },
       fail: err => {
         console.log(err)

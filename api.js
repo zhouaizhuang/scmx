@@ -225,3 +225,29 @@ export const getLocalStorage = function (key = ''){
 export const clearLocalStorage = function (){
   wx.clearStorageSync()
 }
+// 获取扫码结果
+export const getQrCode = function (params = {}){
+  return new Promise((resolve, reject) => {
+    wx.scanCode({
+      onlyFromCamera: true,
+      ...params,
+      success: res => { resolve(res) },
+      fail: err => { reject(err) }
+    })
+  })
+}
+// 微信支付
+export const requestPayment = function (params = {}){
+  return new Promise((resolve, reject) => {
+    wx.requestPayment({
+      timeStamp: '',
+      nonceStr: '',
+      package: '',
+      signType: 'MD5',
+      paySign: '',
+      ...params,
+      success: res => { resolve(res) },
+      fail: err => { reject(err) }
+    })
+  })
+}
