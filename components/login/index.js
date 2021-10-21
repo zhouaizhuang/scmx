@@ -45,10 +45,10 @@ Component({
                 setLocalStorage('userInfo', { nick_name, avatar, phone, openid, created_at, amount })
               }).catch(err => {
                 setLocalStorage('userInfo', {})
-                console.log(err)
+                showToast(e)
               })
             } catch(e) {
-              showToast(JSON.stringify(e))
+              showToast(e)
             }
           },
           fail: res => showToast(res)
