@@ -47,7 +47,11 @@ Page({
   },
   async pay(){
     const token = getLocalStorage('token') || ''
-    if(!token) { return this.showLogin() }
+    if(!token) { 
+      return setTimeout(() => {
+        this.showLogin() 
+      }, 1000)
+    }
     const { rice_amount, machine_id } = this.data.options
     const {id} = this.data.checkedCoupon
     const {appId, nonceStr, package:pack, paySign, signType, timeStamp } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: 1, member_ic_id:''})
@@ -56,7 +60,6 @@ Page({
       this.setData({paySuccess:1, isShowStatusMask: true})
     } catch(e){
       this.setData({paySuccess:2, isShowStatusMask: true})
-      showToast(JSON.stringify(e))
     } 
   },
   closeMask(){

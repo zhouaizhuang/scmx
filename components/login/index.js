@@ -1,4 +1,4 @@
-import { getUserProfile, showToast, setLocalStorage } from "../../api"
+import { getUserProfile, showToast, setLocalStorage, getLocalStorage } from "../../api"
 import { post } from "../../libs/network"
 Component({
   options: {
@@ -18,6 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    code: '', // 微信code
     isGetUserInfo: false, // 是否显示登录弹框提示
     nick_name: '',
     avatar: '',
@@ -32,27 +33,21 @@ Component({
     },
     getPhoneNumber(e){
       const { encryptedData, iv } =  e.detail
-      const { nick_name, avatar } = this.data
+      const { nick_name, avatar, code } = this.data
       if(encryptedData && iv && nick_name && avatar) {
-        wx.login({
-          success: async res => {
-            const { code } = res
-            try {
-              // console.log(encryptedData, iv, code,nick_name, avatar)
-              post('/wap/auth/xcxlogin', { encryptedData, iv, code,nick_name, avatar}).then(res => {
-                const {amount, avatar,created_at, nick_name, openid, phone } = res
-                this.closeLogin()
-                setLocalStorage('userInfo', { nick_name, avatar, phone, openid, created_at, amount })
-              }).catch(err => {
-                setLocalStorage('userInfo', {})
-                showToast(e)
-              })
-            } catch(e) {
-              showToast(e)
-            }
-          },
-          fail: res => showToast(res)
-        }) 
+        try {
+          // console.log(encryptedData, iv, code,nick_name, avatar)
+          post('/wap/auth/xcxlogin', { encryptedData, iv, code, nick_name, avatar}).then(res => {
+            const {amount, avatar,created_at, nick_name, openid, phone } = res
+            this.closeLogin()
+            setLocalStorage('userInfo', { nick_name, avatar, phone, openid, created_at, amount })
+          }).catch(err => {
+            setLocalStorage('userInfo', {})
+            showToast(e)
+          })
+        } catch(e) {
+          showToast(e)
+        }
       }
     },
     async getUserData(e){
@@ -63,5 +58,18 @@ Component({
         setLocalStorage('userInfo', { nick_name, avatar})
       }
     },
+  },
+  created(){
+    const token = getLocalStorage('token') || ''
+    if(!token) {
+      wx.login({
+        success: res => {
+          this.setData({code: res.code})
+        },
+        fail: err => {
+          showToast('获取微信code失败' + err)
+        }
+      })
+    }
   }
 })

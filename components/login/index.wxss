@@ -1,1 +1,12 @@
 /* components/index.js.wxss */
+@keyframes breathing {
+  0%{
+    transform: scale(0.93);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.aniScale{
+  animation: breathing 0.6s ease-in-out .2s 2 alternate;
+}
