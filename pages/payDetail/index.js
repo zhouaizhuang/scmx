@@ -90,6 +90,7 @@ Page({
     })
     this.setData({couponNotUsed})
   },
+  // 获取优惠券
   async getCoupon(){
     const {rice_amount} = this.data.options
     let list = await post('/wap/coupon/valid?expand=coupon', { price: rice_amount })
