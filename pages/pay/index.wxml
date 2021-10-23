@@ -9,9 +9,10 @@
       <view bindtap="selectMoney" data-no="200" class="w28 {{no == 200 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">200元</view>
       <view bindtap="selectMoney" data-no="250" class="w28 {{no == 250 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">250元</view>
       -->
-      <view bindtap="selectMoney" data-no="300" class="w28 {{no == 300 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">300元</view>
-      <view bindtap="selectMoney" data-no="500" class="w28 {{no == 500 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">500元</view>
-      <view bindtap="selectMoney" data-no="1000" class="w28 {{no == 1000 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">1000元</view>
+      <view bindtap="selectMoney" data-no="300" class="w28 mb30r {{no == 300 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">300元</view>
+      <view bindtap="selectMoney" data-no="500" class="w28 mb30r {{no == 500 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">500元</view>
+      <view bindtap="selectMoney" data-no="1000" class="w28 mb30r {{no == 1000 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">1000元</view>
+      <view bindtap="selectMoney" data-no="0.01" class="w28 mb30r {{no == 0.01 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">0.01元</view>
     </view>
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
     <view class="f">

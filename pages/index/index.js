@@ -8,7 +8,9 @@ Page({
     // subkey: "SS5BZ-YG23F-DHJJH-JJ4QS-SGN76-5SGIV",
     clickPointItem: {}, // 选择的点位
     isShowDetail: false, // 是否显示详情
-    markers: []
+    markers: [],
+    lat:31.273391,
+    lng:120.730435
   },
   mapCtx: null,
   // 点击标记点的回调
