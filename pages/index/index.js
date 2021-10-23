@@ -75,7 +75,7 @@ Page({
     markArr = markArr.map(v => {
       const { id, map_lat, map_lng } = v
       console.log(map_lat, map_lng)
-      v.id = Number(v.id)
+      v.id = Number(id)
       return {
         iconPath: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
         latitude: Number(map_lat), // 经度
