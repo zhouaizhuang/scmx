@@ -33,9 +33,11 @@
       </view>
       <view class="f ac pt30r pb30r bdbf0f2fd">
         <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat.png"></image>
-        <button open-type="contact">
-          <view class="f1 g2b3446 b fs34r">联系我们</view>
-        </button>
+          <view class="f1 g2b3446 b fs34r">
+            <button open-type="contact" style="width:100%;display:block;text-align:left;padding:0;background-color:#fff;">
+              联系我们
+            </button>
+          </view>
         <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
       </view>
     </view>
