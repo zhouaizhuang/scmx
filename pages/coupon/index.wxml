@@ -36,7 +36,7 @@
     </view>
     <view wx:if="{{couponNotUsed.isLoad && couponNotUsed.list.length === 0}}" class="abs l50 tx-50" style="top:355rpx;">
       <image class="mb30r" style="width:220rpx;height:146rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_money.png"></image>
-      <view class="g7c8094 fs30r">暂无可用优惠券</view>
+      <view class="g7c8094 fs30r tc">暂无可用优惠券</view>
     </view>
     <view wx:if="{{couponNotUsed.list.length > 0}}" class="fixed b0 bgf l0 pt20r pb20r tc g7c8094 fs30r w100">不使用优惠券</view>
   </view>
@@ -65,7 +65,7 @@
     </view>
     <view wx:if="{{couponUsed.isLoad && couponUsed.list.length === 0}}" class="abs l50 tx-50" style="top:355rpx;">
       <image class="mb30r" style="width:220rpx;height:146rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_money.png"></image>
-      <view class="g7c8094 fs30r">暂无优惠券</view>
+      <view class="g7c8094 fs30r tc">暂无优惠券</view>
     </view>
   </view>
   <!--已过期-->
@@ -93,7 +93,7 @@
     </view>
     <view wx:if="{{couponOverTime.isLoad && couponOverTime.list.length === 0}}" class="abs l50 tx-50" style="top:355rpx;">
       <image class="mb30r" style="width:220rpx;height:146rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_money.png"></image>
-      <view class="g7c8094 fs30r">暂无优惠券</view>
+      <view class="g7c8094 fs30r tc">暂无优惠券</view>
     </view>
   </view>
 </view>
