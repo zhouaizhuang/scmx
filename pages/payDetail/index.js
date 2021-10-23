@@ -18,6 +18,9 @@ Page({
     isShowCoupon:false, // 默认不显示优惠券选择列表
     couponNotUsed: [], // 未使用的优惠券,
     checkedCoupon: {coupon:{}}, // 选择的优惠券
+    isShowIc:false, // 是否显示ic卡列表 
+    icCardList: [],
+    selectIcItem: {}, // 被选中的ic卡条目
   },
   showLogin(){
     this.setData({isShowLogin:true})
@@ -37,12 +40,25 @@ Page({
     this.setData({payType: 3})
   },
   payIcCard(){
-    this.setData({payType: 4})
+    this.setData({payType: 4, isShowIc:true})
   },
   openCoupon(){
     this.setData({isShowCoupon: true})
     this.getCoupon()
   },
+  closeIcCard(){
+    this.setData({isShowIc:false})
+  },
+  selectIcCard(e){
+    const { item } = e.currentTarget.dataset
+    console.log(e.currentTarget)
+    const icCardList = this.data.icCardList.map(v => {
+      v.isChecked = v.id === item.id
+      return v
+    })
+    this.setData({icCardList, selectIcItem:item})
+  },
+  empty(){},
   closeCoupon(){
     this.setData({isShowCoupon: false})
   },
@@ -54,8 +70,9 @@ Page({
       }, 1000)
     }
     const { rice_amount, machine_id } = this.data.options
+    const { payType, selectIcItem } = this.data
     const {id} = this.data.checkedCoupon
-    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: 1, member_ic_id:''})
+    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.member_id})
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
       console.log(res)
@@ -100,6 +117,17 @@ Page({
     list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
     this.setData({ couponNotUsed: list })
   },
+  async getIcCardList(){
+    let icCardList = await post('/wap/ic/list')
+    icCardList = icCardList.map(v => {
+      return {
+        ...v,
+        _price: Number(v.price),
+        isChecked:false
+      }
+    })
+    this.setData({icCardList})
+  },
   async getDetail(){
     try{
       const {rice_amount, machine_id} = this.data.options
@@ -107,6 +135,7 @@ Page({
       info._phone = info.phone.slice(0, 3) + '****' + info.phone.slice(-4) 
       this.setData({ info, showTotal:info.total_price })
       this.getCoupon()
+      this.getIcCardList()
     } catch(e) {
       showToast(e)
     }

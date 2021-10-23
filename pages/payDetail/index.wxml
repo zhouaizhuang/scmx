@@ -58,7 +58,7 @@
     </view>
     <view bindtap="payIcCard" class="f mb30r">
       <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_blue.png"></image>
-      <view class="f1 g7c8094 fs30r">IC卡</view>
+      <view class="f1 g7c8094 fs30r">IC卡<text class="ml40r" wx:if="{{selectIcItem.card_no}}">卡号：{{selectIcItem.card_no}}</text></view>
       <image style="width:38rpx;height:38rpx;" src="{{payType == 4 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
   </view>
@@ -100,6 +100,35 @@
           </view>
         </view>
         <view bindtap="nouUseCoupon" class="pt20r pb20r tc g7c8094 fs30r w100">不使用优惠券</view>
+      </view>
+    </view>
+  </view>
+  <!--选择IC卡-->
+  <view bindtap="closeIcCard" wx:if="{{isShowIc}}" class="fixed trbl0 zx10" style="background-color:rgba(0,0,0,.7);">
+    <view catch:tap="empty" class="bgf abs zx20 b0 w100 trans3 {{isShowIc ? 'ty0' : 'ty130'}}" style="height:900rpx;border-radius: 40rpx 40rpx 0px 0px;">
+      <view class="pt50r pl50r pr50r pb20r h100 rel">
+        <view class="f mb30r">
+          <view class="f1 fs34r b g2b3446">选择IC卡</view>
+          <view bindtap="closeIcCard" class="rel" style="transform:rotate(45deg);width:30rpx;height:30rpx;">
+            <view class="abs l50 t0 h100 bg656c7d" style="width:2rpx;"></view>
+            <view class="abs t50 l0 w100 bg656c7d" style="height:2rpx;"></view>
+          </view>
+        </view>
+        <view class="abs l0 r0 b0 ovya" style="top:120rpx;padding-bottom:100rpx;">
+          <view bindtap="selectIcCard" data-item="{{item}}" wx:for="{{icCardList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="{{item._price > 0 ? 'icCardBg' : 'icCardBgBlue'}} mb30r auto">
+            <view class="f ac pl30r pt50r pb50r pr30r">
+              <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
+              <view class="f1 f ac rw">
+                <view class="w100 gf fs30r mb10r">卡号：{{item.card_no}}</view>
+                <view class="w100 f ac">
+                  <view class="fs24r gf mr15r" style="transform:translateY(10rpx);">余额</view>
+                  <view class="f1 fs50r gf b">{{item.price}}</view>
+                </view>
+              </view>
+              <image style="width:35rpx;height:35rpx;" src="{{item.isChecked ? '../images/scmx_ic_checked.png' : '../images/scmx_ic_not_checked.png'}}"></image>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </view>
