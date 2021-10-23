@@ -36,7 +36,7 @@
       <view class="bgf5f6fa f mb28r ac pt22r pb22r pl28r pr28r rds10r">
         <view class="f1 f ac">
           <image style="width:38rpx;height:43rpx;" class="mr18r" src="{{clickPointItem.status == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png': 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_short_mi.png'}}"></image>
-          <view class="g2b3446 b fs26r">{{clickPointItem.status == 1 ? '米仓满，可购买' : '米仓余量不足' }}</view>
+          <view class="g2b3446 b fs26r">{{clickPointItem.riceAmountJin > 0 ? '米仓剩余' + clickPointItem.riceAmountJin + '斤，可购买' : '米仓余量不足' }}</view>
         </view>
       </view>
       <view class="bgf5f6fa f ac pt22r pb22r pl28r pr28r rds10r g2b3446 b fs26r">

@@ -1,5 +1,5 @@
 // components/tabbar.js
-import { redirectTo } from "../../api"
+import { redirectTo, getQrCode, navigateTo, getLocalStorage  } from "../../api"
 Component({
   options: {
     addGlobalClass: true
@@ -17,7 +17,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-   
+    isShowLogin:false,
   },
 
   /**
@@ -29,10 +29,16 @@ Component({
         redirectTo('/pages/index/index')
       }
     },
-    goQrcode(){
-      // if(this.data.selectTab !== 'qrcode') {
-      //   redirectTo('/pages/qrcode/index')
-      // }
+    closeLogin(){
+      this.setData({isShowLogin:false})
+    },
+    async goQrcode(){
+      const token = getLocalStorage('token') || ''
+      if(!token) {
+        return this.setData({isShowLogin:true})
+      }
+      const {path} = await getQrCode()
+      navigateTo(path)
     },
     goMine(){
       if(this.data.selectTab !== 'mine') {

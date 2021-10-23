@@ -31,9 +31,11 @@
         <view class="f1 g2b3446 b fs34r">我的订单</view>
         <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
       </view>
-       <view class="f ac pt30r pb30r bdbf0f2fd">
+      <view class="f ac pt30r pb30r bdbf0f2fd">
         <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat.png"></image>
-        <view class="f1 g2b3446 b fs34r">联系我们</view>
+        <button open-type="contact">
+          <view class="f1 g2b3446 b fs34r">联系我们</view>
+        </button>
         <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
       </view>
     </view>
