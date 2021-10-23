@@ -62,26 +62,14 @@
       <image style="width:38rpx;height:38rpx;" src="{{payType == 4 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
   </view>
+  <!--底部付款-->
   <view class="fixed w100 b0 l0">
     <view class="f ac xb pt30r pb30r pr50r pl30r">
       <view class="g2b3446 fs24r">合计：<text class="pl10r gff8b36 b fs34r"><text class="fs24r" style="transform: translateY(10rpx);">￥</text>{{showTotal}}</text></view>
       <view bindtap="pay" class="rds40r fs28r gf f ac xc" style="width:200rpx;height:68rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);">付款</view>
     </view>
   </view>
-  <!-- wx:if="{{paySuccess != 0 && isShowStatusMask}}"  -->
-  <view wx:if="{{paySuccess != 0 && isShowStatusMask}}" bindtap="closeMask" class="fixed trbl0 zx100" style="background-color:rgba(0,0,0,.7);">
-    <view class="bgf rds40r pt50r pb50r abs l50 tx-50" style="top:28%;width:610rpx;">
-      <image class="db auto mb40r" style="width:170rpx;height:121rpx;" src="{{paySuccess == 1 ? '../images/scmx_pay_suc.png' : '../images/scmx_pay_err.png'}}"></image>
-      <view class="tc g2b3446 fs34r mb40r">{{paySuccess == 1 ? '支付成功' : '支付失败' }}</view>
-      <view wx:if="{{paySuccess == 1}}" bindtap="goPayList"  class="f ac xc gf b fs30r rds50r auto" style="width:440rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">查看订单</view>
-      <view wx:else class="f xc">
-        <view bindtap="goPayList" class="mr20r f ac xc b rds50r bgf5f6fa g7c8094 fs30r" style="width:220rpx;height:88rpx;">查看订单</view>
-        <!--
-        <view class="f ac xc gf b fs30r rds50r" style="width:220rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">重新支付</view>
-        -->
-      </view>
-    </view>
-  </view>
+  <!--选择优惠券-->
   <view bindtap="closeCoupon" wx:if="{{isShowCoupon}}" class="fixed trbl0 zx10" style="background-color:rgba(0,0,0,.7);">
     <view catch:tap="empty" class="bgf abs zx20 b0 w100 trans3 {{isShowCoupon ? 'ty0' : 'ty130'}}" style="height:900rpx;border-radius: 40rpx 40rpx 0px 0px;">
       <view class="pt50r pl50r pr50r pb20r h100 rel">
@@ -115,5 +103,8 @@
       </view>
     </view>
   </view>
+  <!--支付状态显示-->
+  <payStatus payStatus="{{payStatus}}" isShowStatusMask="{{isShowStatusMask}}" bind:closeMask="closeMask"></payStatus>
+  <!--登录弹框-->
   <login isShowLogin="{{isShowLogin}}" bind:closeLogin="closeLogin" />
 </view>

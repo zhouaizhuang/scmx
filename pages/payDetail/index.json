@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "login": "../../components/login/index"
+    "login": "../../components/login/index",
+    "payStatus": "../../components/payStatus/index"
   },
   "navigationBarTitleText": "支付详情"
 }

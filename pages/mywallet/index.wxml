@@ -1,7 +1,8 @@
 <view class="h100vh rel" style="background:#fff;">
   <view class="bgtop rel zx1">
     <view class="f ac pt30r pl40r pr40r">
-      <image style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <image wx:if="{{userInfo.avatar}}" class="rds50 mr30r" style="width:120rpx;height:120rpx;" src="{{userInfo.avatar}}"></image>
+      <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
       <view class="f1 f rw">
         <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>500</view>
         <view class="w100 gf op6 fs24r">可用余额</view>
@@ -18,19 +19,12 @@
       </view>
     </view>
     <view class="pl30r pr30r pb30r">
-      <view class="bdbf0f2fd pb30r mb30r">
-        <view class="fs24r ga8abbc mb20r">2021.07.08 13:47:07</view>
+      <view wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="bdbf0f2fd pb30r mb30r">
+        <view class="fs24r ga8abbc mb20r">{{item.order_time}}</view>
         <view class="f xb">
-          <view class="g2b3446 b fs28r">充值</view>
-          <!--g2b3446-->
-          <view class="gff8b36 fs30r b"><text class="pr10r">+</text>50.00</view>
-        </view>
-      </view>
-      <view class="bdbf0f2fd pb30r mb30r">
-        <view class="fs24r ga8abbc mb20r">2021.07.08 13:47:07</view>
-        <view class="f xb">
-          <view class="g2b3446 b fs28r">提现</view>
-          <view class="g2b3446 fs30r b"><text class="pr10r">-</text>50.00</view>
+          <view wx:if="{{item.order_type == 1}}" class="g2b3446 b fs28r">充值</view>
+          <view wx:if="{{item.order_type == 1}}"  class="gff8b36 fs30r b"><text class="pr10r">+</text>{{item.order_price}}</view>
+          <view wx:else class="g2b3446 fs30r b"><text class="pr10r">-</text>{{item.order_price}}</view>
         </view>
       </view>
     </view>

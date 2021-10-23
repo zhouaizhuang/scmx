@@ -1,5 +1,5 @@
 import { post } from "../../libs/network"
-import { navigateTo, showToast, requestPayment, getLocalStorage } from "../../api"
+import { showToast, requestPayment, getLocalStorage } from "../../api"
 import { safeGet, range, round } from "../../common"
 
 // pages/payDetail/index.js
@@ -13,7 +13,7 @@ Page({
     info:{},
     showTotal: 0,
     isShowStatusMask: false, // 是否显示付款状态弹窗
-    paySuccess: 0, // 0：未付款 1：付款成功  2：付款失败
+    payStatus: 0, // 0：未付款 1：付款成功  2：付款失败
     payType: 1, // 1:微信支付   3钱包支付   4 IC卡支付
     isShowCoupon:false, // 默认不显示优惠券选择列表
     couponNotUsed: [], // 未使用的优惠券,
@@ -22,6 +22,7 @@ Page({
   showLogin(){
     this.setData({isShowLogin:true})
   },
+  // 关闭授权弹框的时候及时将新数据获取
   closeLogin(){
     this.setData({isShowLogin:false})
     const userInfo = getLocalStorage('userInfo') || {}
@@ -58,17 +59,14 @@ Page({
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
       console.log(res)
-      this.setData({paySuccess:1, isShowStatusMask: true})
+      this.setData({payStatus:1, isShowStatusMask: true})
     } catch(e){
       post('/wap/order/cancel', { order_no: out_trade_no })
-      this.setData({paySuccess:2, isShowStatusMask: true})
+      this.setData({payStatus:2, isShowStatusMask: true})
     } 
   },
   closeMask(){
     this.setData({isShowStatusMask: false})
-  },
-  goPayList(){
-    navigateTo('../myOrder/index')
   },
   nouUseCoupon(){
     const couponNotUsed = this.data.couponNotUsed.map(item => {
