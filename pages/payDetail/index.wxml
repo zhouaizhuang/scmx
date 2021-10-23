@@ -76,7 +76,9 @@
       <view wx:if="{{paySuccess == 1}}" bindtap="goPayList"  class="f ac xc gf b fs30r rds50r auto" style="width:440rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">查看订单</view>
       <view wx:else class="f xc">
         <view bindtap="goPayList" class="mr20r f ac xc b rds50r bgf5f6fa g7c8094 fs30r" style="width:220rpx;height:88rpx;">查看订单</view>
+        <!--
         <view class="f ac xc gf b fs30r rds50r" style="width:220rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">重新支付</view>
+        -->
       </view>
     </view>
   </view>
