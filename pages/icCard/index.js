@@ -1,5 +1,5 @@
 import { post } from "../../libs/network"
-
+import { navigateTo } from "../../api"
 // pages/icCard/index.js
 Page({
 
@@ -20,11 +20,13 @@ Page({
     })
     this.setData({cardList, isGetData:true})
   },
+  async reCharge(e){
+    navigateTo(`../pay/index?from=icCard&id=${e.currentTarget.dataset.id}`)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getIcCard()
   },
 
   /**
@@ -38,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getIcCard()
   },
 
   /**

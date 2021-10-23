@@ -1,6 +1,6 @@
 import { post } from "../../libs/network"
 import { formatMoney } from "../../common"
-import { requestPayment, navigateTo } from "../../api" 
+import { requestPayment, navigateTo, navigateBack } from "../../api" 
 // pages/pay/index.js
 Page({
 
@@ -10,17 +10,23 @@ Page({
   data: {
     no: 300,
     noStr: '300.00',
+    options: {}, // 页面参数
   },
   async selectMoney(e){
     const {no} = e.currentTarget.dataset
     this.setData({no, noStr: formatMoney(no)})
   },
   async pay(){
+    const {from = '', id = ''} = this.data.options
+    let order_type = 1
+    if(from == 'icCard') {
+      order_type = 2
+    }
     const {no} = this.data
-    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no} = await post('/wap/prepaid/wxpay', { price: no })
+    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no} = await post('/wap/prepaid/wxpay', { price: no, order_type, member_ic_id: id })
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
-      navigateTo('../mywallet/index')
+      navigateBack()
     } catch(e){
       post('/wap/order/cancel', { order_no: out_trade_no })
     }
@@ -29,7 +35,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // from ---> 标记页面来源    id标记需索充值的IC卡id
+    const { from, id } = options
+    console.log(options)
+    this.setData({options})
   },
 
   /**

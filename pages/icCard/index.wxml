@@ -5,7 +5,7 @@
         <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
         <view class="fs24r gf mr15r" style="transform:translateY(10rpx);">余额</view>
         <view class="f1 fs50r gf b">{{item.price}}</view>
-        <view class="bgf rds30r g2b3446 b fs28r" style="padding:11rpx 38rpx;">充值</view>
+        <view bindtap="reCharge" data-id="{{item.id}}" class="bgf rds30r g2b3446 b fs28r" style="padding:11rpx 38rpx;">充值</view>
       </view>
     </view>
     <view wx:if="{{isGetData && cardList.length == 0}}" class="abs l50 tx-50" style="top:350rpx;">
