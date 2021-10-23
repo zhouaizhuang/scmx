@@ -16,13 +16,13 @@
     bindtap="tapBlank"
   >
     <cover-image style="width:82rpx;height:97rpx;" class="abs l50 t50 txy-50" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_loc.png"></cover-image>
+    <cover-image bindtap="moveToLocation" style="width:110rpx;height:110rpx; top:500rpx;" class="abs r30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_go_center.png"></cover-image>
   </map>
   <!--当前选择的点的详细信息-->
   <view class="abs zx10 w100 l0 bgimg trans2 {{isShowDetail ? 'ty0' : 'ty130' }}" style="bottom:110rpx;border-radius: 20rpx 20rpx 0 0;">
     <button open-type="contact" class="abs l30r" style="display:block;padding:0;background-color:transparent;width:235rpx;height:80rpx;top:-90rpx;">
       <image style="width:235rpx;height:80rpx;" class="" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ploblem.png"></image>
     </button>
-    <image bindtap="moveToLocation" style="width:80rpx;height:80rpx;top:-90rpx;" class="abs r30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_go_center.png"></image>
     <view style="padding:60rpx 48rpx 20rpx 50rpx;">
       <view class="f mb25r">
         <image style="width:120rpx;height:120rpx;" class="rds15r mr25r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
