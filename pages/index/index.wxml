@@ -3,7 +3,7 @@
   <!--https://www.jianshu.com/p/a05fa4cad796-->
   <map 
     id="myMap" 
-    scale="18" 
+    scale="12" 
     longitude="{{lng}}"
     latitude="{{lat}}"
     markers="{{markers}}" 
@@ -23,10 +23,10 @@
     <image bindtap="moveToLocation" style="width:80rpx;height:80rpx;top:-90rpx;" class="abs r30r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_go_center.png"></image>
     <view style="padding:60rpx 48rpx 20rpx 50rpx;">
       <view class="f mb25r">
-        <image style="width:120rpx;height:120rpx;" class="rds15r mr25r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_top.png"></image>
+        <image style="width:120rpx;height:120rpx;" class="rds15r mr25r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
         <view class="f1 f rw">
-          <view class="w100 g2b3446 fs34r b mb15r">世贸·香槟湖南区</view>
-          <view class="w100 fs26r g7c8094">常州市新北区太湖东路三井街道53-1101F</view>
+          <view class="w100 g2b3446 fs34r b mb15r">{{clickPointItem.name}}</view>
+          <view class="w100 fs26r g7c8094">{{clickPointItem.address}}</view>
         </view>
         <view bindtap="openLocation" class="f rw" style="width:67rpx;">
           <image style="width:67rpx;height:70rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_direction.png"></image>
@@ -35,12 +35,12 @@
       </view>
       <view class="bgf5f6fa f mb28r ac pt22r pb22r pl28r pr28r rds10r">
         <view class="f1 f ac">
-          <image style="width:38rpx;height:43rpx;" class="mr18r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png"></image>
-          <view class="g2b3446 b fs26r">米仓满，可购买</view>
+          <image style="width:38rpx;height:43rpx;" class="mr18r" src="{{clickPointItem.status == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_list_light.png': 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_short_mi.png'}}"></image>
+          <view class="g2b3446 b fs26r">{{clickPointItem.status == 1 ? '米仓满，可购买' : '米仓余量不足' }}</view>
         </view>
       </view>
       <view class="bgf5f6fa f ac pt22r pb22r pl28r pr28r rds10r g2b3446 b fs26r">
-        充值米卡享优惠，15元/kg，75元/5kg
+        {{clickPointItem.remark}}
       </view>
     </view>
   </view>
