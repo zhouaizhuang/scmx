@@ -53,6 +53,12 @@
           "pathName": "pages/payDetail/index",
           "query": "rice_amount=3&machine_id=A1 86 49 01 00 55 07 00 0C CE 4D 10 00 00 00",
           "scene": null
+        },
+        {
+          "name": "IC卡绑定",
+          "pathName": "pages/icCardBind/index",
+          "query": "card_no=123123",
+          "scene": null
         }
       ]
     }

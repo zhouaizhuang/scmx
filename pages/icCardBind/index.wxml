@@ -1,0 +1,13 @@
+<view class="h100vh rel" style="background:#f5f5f5;;">
+  <view class="pl30r pr30r pt30r">
+    <view class="f ac bgf fs30r pt20r pb20r pl20r rds20r mb40r">
+      <view class="mr30r">IC卡物理卡号:</view>
+      <view class="f1">
+        <input type="number" style="width:95%;height:70rpx;" value="{{card_no}}" bindinput="changeCardNo" placeholder="请输入IC卡物理卡号" disabled />
+      </view>
+    </view>
+    <view bindtap="bindIcCard" class="fs30r b w80 auto f ac xc gf pl30r pr30r" style="height:90rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);border-radius: 44px;">提交</view>
+  </view>
+  <!--登录弹框-->
+  <login isShowLogin="{{isShowLogin}}" bind:closeLogin="closeLogin" />
+</view>

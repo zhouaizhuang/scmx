@@ -57,6 +57,8 @@
 .tl{text-align: left;} .tc{text-align: center;} .tr{text-align: right;} .tj{text-align: justify;}
 /* 文字间距 */
 .lt5{letter-spacing: 5rpx;}
+/* 删除线 */
+.tdl{text-decoration: line-through;}
 /* 字体大小 */
 .fs0{font-size:0;} .fs12r{font-size:12rpx;} .fs14r{font-size:14rpx;} .fs16r{font-size:16rpx;} .fs18r{font-size:18rpx;}
 .fs20r{font-size:20rpx;} .fs22r{font-size:22rpx;} .fs24r{font-size:24rpx;} .fs26r{font-size:26rpx;} .fs28r{font-size:28rpx;}

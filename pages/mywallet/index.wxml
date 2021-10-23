@@ -4,7 +4,7 @@
       <image wx:if="{{userInfo.avatar}}" class="rds50 mr30r" style="width:120rpx;height:120rpx;" src="{{userInfo.avatar}}"></image>
       <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
       <view class="f1 f rw">
-        <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>500</view>
+        <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>{{userInfo.amount}}</view>
         <view class="w100 gf op6 fs24r">可用余额</view>
       </view>
       <view bindtap="goPay" class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r">充值</view>
@@ -20,10 +20,15 @@
     </view>
     <view class="pl30r pr30r pb30r">
       <view wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="bdbf0f2fd pb30r mb30r">
-        <view class="fs24r ga8abbc mb20r">{{item.order_time}}</view>
+        <view class="fs24r ga8abbc mb20r f">
+          <view class="f1">{{item.order_time}}</view>
+          <view class="{{item.pay_status == 2 ? 'g61d382' : ''}} rds5r f ac xc fs22r b" style="width: 86rpx;height: 40rpx;background: rgba(97,211, 130, .1);">
+            {{item.payStatusText}}
+          </view>
+        </view>
         <view class="f xb">
           <view wx:if="{{item.order_type == 1}}" class="g2b3446 b fs28r">充值</view>
-          <view wx:if="{{item.order_type == 1}}"  class="gff8b36 fs30r b"><text class="pr10r">+</text>{{item.order_price}}</view>
+          <view wx:if="{{item.order_type == 1}}"  class="{{item.pay_status == 2 ? 'gff8b36' : 'tdl'}} fs30r b"><text class="pr10r">+</text>{{item.order_price}}</view>
           <view wx:else class="g2b3446 fs30r b"><text class="pr10r">-</text>{{item.order_price}}</view>
         </view>
       </view>

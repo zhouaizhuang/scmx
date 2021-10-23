@@ -9,7 +9,8 @@
     "pages/payDetail/index",
     "pages/coupon/index",
     "pages/icCard/index",
-    "pages/myOrder/index"
+    "pages/myOrder/index",
+    "pages/icCardBind/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

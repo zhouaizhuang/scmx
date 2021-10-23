@@ -1,5 +1,5 @@
-import { getLocalStorage, navigateTo } from "../../api"
-import { post } from "../../libs/network"
+import { navigateTo } from "../../api"
+import { get, post } from "../../libs/network"
 Page({
 
   /**
@@ -9,22 +9,26 @@ Page({
     userInfo:{},
     orderList: [],
     isGetData: false,
+    page: 1,
   },
   goPay(){
     navigateTo('../pay/index')
   },
   async getOrderList(){
-    const {list} = await post('/wap/order/list?type=1')
+    const {list} = await post(`/wap/order/list?type=1&page=${this.data.page}`)
     const newOrderList = [...this.data.orderList, ...list]
     this.setData({orderList: newOrderList, isGetData:true})
+  },
+  async getMyInfo(){
+    const userInfo = await get('/wap/auth/my')
+    this.setData({userInfo})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const userInfo = getLocalStorage('userInfo') || {}
-    this.setData({userInfo})
     this.getOrderList()
+    this.getMyInfo()
   },
 
   /**
