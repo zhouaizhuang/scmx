@@ -2,21 +2,24 @@
   <view class="pt30r pl50r pr50r">
     <view class="g2b3446 b fs40r mb40r">充值金额</view>
     <view class="f rw xb mb20r">
-      <view class="w28 linear6766e5 rds10r f ac xc gf fs30r b pt35r pb35r mr25r mb25r">20元</view>
-      <view class="w28 bgf5f6fa g2b3446 rds10r f ac xc fs30r b pt35r pb35r mr25r mb25r">50元</view>
-      <view class="w28 bgf5f6fa g2b3446 rds10r f ac xc fs30r b pt35r pb35r mb25r">150元</view>
-      <view class="w28 bgf5f6fa g2b3446 rds10r f ac xc gf fs30r b pt35r pb35r mr25r">200元</view>
-      <view class="w28 bgf5f6fa g2b3446 rds10r f ac xc fs30r b pt35r pb35r mr25r">250元</view>
-      <view class="w28 bgf5f6fa g2b3446 rds10r f ac xc fs30r b pt35r pb35r">300元</view>
+      <!--
+      <view bindtap="selectMoney" data-no="20" class="w28 {{no == 20 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r mb25r">20元</view>
+      <view bindtap="selectMoney" data-no="50" class="w28 {{no == 50 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r mb25r">50元</view>
+      <view bindtap="selectMoney" data-no="150" class="w28 {{no == 150 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mb25r">150元</view>
+      <view bindtap="selectMoney" data-no="200" class="w28 {{no == 200 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">200元</view>
+      <view bindtap="selectMoney" data-no="250" class="w28 {{no == 250 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">250元</view>
+      -->
+      <view bindtap="selectMoney" data-no="300" class="w28 {{no == 300 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">300元</view>
+      <view bindtap="selectMoney" data-no="500" class="w28 {{no == 500 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">500元</view>
+      <view bindtap="selectMoney" data-no="1000" class="w28 {{no == 1000 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">1000元</view>
     </view>
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
     <view class="f">
       <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
       <view class="f1 g7c8094 fs30r">微信支付</view>
       <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
-      <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>
+      <!--<image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>-->
     </view>
   </view>
-
-  <view class="rds50r fixed b50r pt28r pb28r tc gf b fs32r l50 tx-50" style="width:650rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);"><text class="mr10r">付款</text>￥20.00</view>
+  <view bindtap="pay" class="rds50r fixed b50r pt28r pb28r tc gf b fs32r l50 tx-50" style="width:650rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);"><text class="mr10r">付款</text>￥{{noStr}}</view>
 </view>

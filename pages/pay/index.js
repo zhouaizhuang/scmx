@@ -1,3 +1,6 @@
+import { post } from "../../libs/network"
+import { formatMoney } from "../../common"
+import { requestPayment, navigateTo } from "../../api" 
 // pages/pay/index.js
 Page({
 
@@ -5,9 +8,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    no: 300,
+    noStr: '300.00',
   },
-
+  async selectMoney(e){
+    const {no} = e.currentTarget.dataset
+    this.setData({no, noStr: formatMoney(no)})
+  },
+  async pay(){
+    const {no} = this.data
+    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no} = await post('/wap/prepaid/wxpay', { price: no })
+    try{
+      const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
+      navigateTo('../mywallet/index')
+    } catch(e){
+      post('/wap/order/cancel', { order_no: out_trade_no })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

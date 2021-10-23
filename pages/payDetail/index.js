@@ -72,7 +72,7 @@ Page({
     const { rice_amount, machine_id } = this.data.options
     const { payType, selectIcItem } = this.data
     const {id} = this.data.checkedCoupon
-    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.member_id})
+    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
       console.log(res)

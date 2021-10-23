@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "payStatus": "../../components/payStatus/index"
+  },
   "navigationBarTitleText": "充值"
 }
