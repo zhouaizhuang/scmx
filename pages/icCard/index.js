@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cardList:[]
+    cardList:[],
+    isGetData:false,
   },
   async getIcCard(){
     let cardList = await post('/wap/ic/list')
@@ -17,7 +18,7 @@ Page({
         _price: Number(v.price)
       }
     })
-    this.setData({cardList})
+    this.setData({cardList, isGetData:true})
   },
   /**
    * 生命周期函数--监听页面加载

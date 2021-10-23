@@ -18,7 +18,7 @@
         <view class="abs l50 tx-50 linear6766e5 rds5r" style="bottom:-18rpx;width:30rpx;height:6rpx;"></view>
       </view>
     </view>
-    <view class="pl30r pr30r pb30r">
+    <view class="pl30r pr30r pb30r rel" style="min-height:700rpx;">
       <view wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="bdbf0f2fd pb30r mb30r">
         <view class="fs24r ga8abbc mb20r f">
           <view class="f1">{{item.order_time}}</view>
@@ -31,6 +31,10 @@
           <view wx:if="{{item.order_type == 1}}"  class="{{item.pay_status == 2 ? 'gff8b36' : 'tdl'}} fs30r b"><text class="pr10r">+</text>{{item.order_price}}</view>
           <view wx:else class="g2b3446 fs30r b"><text class="pr10r">-</text>{{item.order_price}}</view>
         </view>
+      </view>
+      <view wx:if="{{isGetData && orderList.length == 0}}" class="abs l50 tx-50" style="top:150rpx;">
+        <image class="mb30r db auto" style="width:220rpx;height:156rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text_01.png"></image>
+        <view class="g7c8094 fs30r">您还没有充值过哦~</view>
       </view>
     </view>
   </view>

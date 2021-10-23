@@ -57,7 +57,7 @@
         {
           "name": "IC卡绑定",
           "pathName": "pages/icCardBind/index",
-          "query": "card_no=123123",
+          "query": "card_no=12312356",
           "scene": null
         }
       ]

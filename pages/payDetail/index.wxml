@@ -17,7 +17,7 @@
       <view class="f mb30r xe">
         <view class="g2b3446 fs26r">优惠券：</view>
         <view class="f1"></view>
-        <view wx:if="{{checkedCoupon.coupon.amount}}" bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs28r gff8b36">-￥{{checkedCoupon.coupon.amount}}<image class="dib pl15r" style="width:12rpx;height:20rpx;" src="../images/scmx_right_arr_01.png"></image></view>
+        <view wx:if="{{checkedCoupon.coupon.amount}}" bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs28r gff8b36">-￥{{checkedCoupon.coupon.amount}}<image class="dib pl15r" style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_right_arr_01.png"></image></view>
         <view wx:else bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs22r gf" style="background: linear-gradient(-90deg, #FFAB58 0%, #FF8B36 100%);">未选优惠券，最高10元可用 ></view>
       </view>
       <view class="bgf5f6fa mb30r" style="width:500rpx;height:1rpx;"></view>
@@ -125,7 +125,7 @@
                   <view class="f1 fs50r gf b">{{item.price}}</view>
                 </view>
               </view>
-              <image style="width:35rpx;height:35rpx;" src="{{item.isChecked ? '../images/scmx_ic_checked.png' : '../images/scmx_ic_not_checked.png'}}"></image>
+              <image style="width:35rpx;height:35rpx;" src="{{item.isChecked ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_not_checked.png'}}"></image>
             </view>
           </view>
         </view>

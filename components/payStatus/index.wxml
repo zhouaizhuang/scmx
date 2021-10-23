@@ -1,6 +1,6 @@
 <view wx:if="{{payStatus != 0 && isShowStatusMask}}" bindtap="close" class="fixed trbl0 zx100" style="background-color:rgba(0,0,0,.7);">
   <view class="bgf rds40r pt50r pb50r abs l50 tx-50" style="top:28%;width:610rpx;">
-    <image class="db auto mb40r" style="width:170rpx;height:121rpx;" src="{{payStatus == 1 ? '../../pages/images/scmx_pay_suc.png' : '../../pages/images/scmx_pay_err.png'}}"></image>
+    <image class="db auto mb40r" style="width:170rpx;height:121rpx;" src="{{payStatus == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_pay_suc.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_pay_err.png'}}"></image>
     <view class="tc g2b3446 fs34r mb40r">{{payStatus == 1 ? '支付成功' : '支付失败' }}</view>
     <view wx:if="{{payStatus == 1}}" bindtap="goPayList"  class="f ac xc gf b fs30r rds50r auto" style="width:440rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);">查看订单</view>
     <view wx:else class="f xc">
