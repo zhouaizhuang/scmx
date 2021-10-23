@@ -1,4 +1,4 @@
-<view class="rel bgf5f6fa">
+<view class="rel bgf5f6fa h100vh">
   <view wx:if="{{orderList.length > 0}}" class="pl30r pr30r pt30r pb30r">
     <!--已支付的订单-->
     <view wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="bgf pt40r pl30r pr30r pb30r rds10r mb30r">
