@@ -19,16 +19,36 @@ Page({
     this.setData({userInfo, token})
   },
   goWallet(){
-    navigateTo('../mywallet/index')
+    const token = getLocalStorage('token') || ''
+    if(token) {
+      navigateTo('../mywallet/index')
+    } else {
+      this.setData({isShowLogin:true})
+    }
   },
   myCoupon(){
-    navigateTo('../coupon/index')
+    const token = getLocalStorage('token') || ''
+    if(token) {
+      navigateTo('../coupon/index')
+    } else {
+      this.setData({isShowLogin:true})
+    }
   },
   goIcCard(){
-    navigateTo('../icCard/index')
+    const token = getLocalStorage('token') || ''
+    if(token) {
+      navigateTo('../icCard/index')
+    } else {
+      this.setData({isShowLogin:true})
+    }
   },
   goMyOrder(){
-    navigateTo('../myOrder/index')
+    const token = getLocalStorage('token') || ''
+    if(token) {
+      navigateTo('../myOrder/index')
+    } else {
+      this.setData({isShowLogin:true})
+    }
   },
   /**
    * 生命周期函数--监听页面加载

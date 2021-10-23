@@ -51,9 +51,6 @@ export const showModal = (title = '标题', content = '这是一个模态弹窗'
 }
 // 页面跳转(可返回上一个页面)
 export const navigateTo = function (url = '', time = 0) {
-  if(!getLocalStorage('token')) {
-    return showToast('请先登录')
-  }
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       wx.navigateTo({

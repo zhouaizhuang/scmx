@@ -1,18 +1,25 @@
 // pages/orderList/index.js
+import {post} from "../../libs/network"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    page:1, // 默认页码为1
+    orderList: [],
+    isGetData: false,
   },
-
+  async getOrderList(){
+    const {list} = await post(`/wap/order/list?page=${this.data.page}`)
+    const newOorderList = [...this.data.orderList, ...list]
+    this.setData({orderList: newOorderList, isGetData:true})
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getOrderList()
   },
 
   /**
