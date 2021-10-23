@@ -44,7 +44,7 @@ Page({
       longitude:lng,
       latitude: lat,
       success: res => {
-        console.lof(res)
+        console.log(res)
       },
       fail: err => {
         console.log(err)
