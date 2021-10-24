@@ -95,4 +95,12 @@ Page({
     this.setData({lat, lng})
     this.getMarks()
   },
+  onShareAppMessage: async function (e) {
+    var shareObj = {
+      title: '生产大米找苏澄米香', // 默认是小程序的名称
+      path: `/pages/index/index`, // 跳转路径，默认是当前页面，必须是以‘/’开头的完整路径
+      imageUrl: 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg', //自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径，支持PNG及JPG，不传入 imageUrl 则使用默认截图。显示图片长宽比是 5:4
+    }
+    return shareObj
+  },
 })
