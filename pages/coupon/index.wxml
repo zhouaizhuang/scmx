@@ -16,9 +16,9 @@
   <!--可使用-->
   <view wx:if="{{currentTab =='0'}}" class="rel" style="margin-top:120rpx;padding-bottom:100rpx;">
     <view wx:for="{{couponNotUsed.list}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="couponbg auto mb30r">
-      <view class="f ac pl50r pr40r pt25r">
-        <view class="f rw fs50r gff8b36" style="width:170rpx;">
-          <view class="w100 mb5r b"><text class="fs24r">￥</text>{{item.coupon.amount || ''}}</view>
+      <view class="f ac pl30r pr40r pt25r">
+        <view class="f rw gff8b36" style="width:170rpx;">
+          <view class="w100 mb5r b fs40r"><text class="fs24r">￥</text>{{item.coupon.amount || ''}}</view>
           <view class="w100 g7c8094 fs24r" wx:if="{{item._perLimit > 0}}">满{{item.coupon.perLimit}}可用</view>
           <view class="w100 g7c8094 fs24r" wx:else>无使用门槛</view>
         </view>

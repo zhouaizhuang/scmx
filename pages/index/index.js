@@ -74,7 +74,7 @@ Page({
   },
   async getMarks(){
     let markArr = await post('/wap/machine/list')
-    markArr = markArr.map(v => {
+    markArr = (markArr || []).map(v => {
       const { id, map_lat, map_lng } = v
       console.log(map_lat, map_lng)
       v.id = Number(id)

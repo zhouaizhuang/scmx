@@ -1,5 +1,5 @@
 import { getLocalStorage, setLocalStorage, showToast } from "../api"
-import { JSON2url, formatJSON } from "../common"
+import { JSON2url, formatJSON, getDateStr } from "../common"
 const BaseHost = 'https://dami.chuangcheng8.com' // 基础域名
 // get请求
 export const get = function (url, params = {}){
@@ -42,9 +42,11 @@ export const request = async function (url, options = {}) {
         if(code === 200) {
           if(token && (token !== localToken)) {
             setLocalStorage('token', token)
+            setLocalStorage('tokenDate', getDateStr())
           }
           resolve(res.data)
         } else if(code === 401){ // token验证失败 || token 过期
+          setLocalStorage('userInfo', {})
           setLocalStorage('token', '')
         } else {
           return showToast(message)

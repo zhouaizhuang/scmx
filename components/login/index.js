@@ -1,4 +1,5 @@
 import { getUserProfile, showToast, setLocalStorage, getLocalStorage } from "../../api"
+import { getDateStr } from "../../common";
 import { post } from "../../libs/network"
 Component({
   options: {
@@ -61,7 +62,9 @@ Component({
   },
   created(){
     const token = getLocalStorage('token') || ''
-    if(!token) {
+    const tokenDate = getLocalStorage('tokenDate') || 0
+    const toDay = getDateStr()
+    if(!token || Number(toDay) - Number(tokenDate) > 4) {
       wx.login({
         success: res => {
           this.setData({code: res.code})
