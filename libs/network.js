@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage, showToast } from "../api"
+import { getLocalStorage, setLocalStorage, showToast, redirectTo } from "../api"
 import { JSON2url, formatJSON, getDateStr } from "../common"
 const BaseHost = 'https://dami.chuangcheng8.com' // 基础域名
 // get请求
@@ -48,6 +48,9 @@ export const request = async function (url, options = {}) {
         } else if(code === 401){ // token验证失败 || token 过期
           setLocalStorage('userInfo', {})
           setLocalStorage('token', '')
+          setTimeout(() => {
+            redirectTo('/pages/mine/index')
+          }, 1500)
         } else {
           return showToast(message)
         }

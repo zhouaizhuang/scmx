@@ -12,4 +12,6 @@
     <view class="w100 tc fs22r {{ selectTab == 'mine' ? 'g2326aa' : 'g7c8094' }}">我的</view>
   </view>
 </view>
+<!--
 <login isShowLogin="{{isShowLogin}}" bind:closeLogin="closeLogin" />
+-->
