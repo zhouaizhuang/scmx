@@ -13,7 +13,7 @@ Page({
   async getOrderList(){
     const {list} = await post(`/wap/order/list?page=${this.data.page}`)
     const newOrderList = [...this.data.orderList, ...list]
-    this.setData({orderList: newOrderList.slice(0,2), isGetData:true})
+    this.setData({orderList: newOrderList, isGetData:true})
   },
   /**
    * 生命周期函数--监听页面加载

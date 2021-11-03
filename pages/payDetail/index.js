@@ -72,15 +72,25 @@ Page({
     const { rice_amount, machine_id } = this.data.options
     const { payType, selectIcItem } = this.data
     const {id} = this.data.checkedCoupon
-    const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
-    try{
-      const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
-      console.log(res)
-      this.setData({payStatus:1, isShowStatusMask: true})
-    } catch(e){
-      post('/wap/order/cancel', { order_no: out_trade_no })
-      this.setData({payStatus:2, isShowStatusMask: true})
-    } 
+    // 1:微信支付   3钱包支付   4 IC卡支付
+    if(payType == 1) {
+      const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
+      try{
+        const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
+        console.log(res)
+        this.setData({payStatus:1, isShowStatusMask: true})
+      } catch(e){
+        post('/wap/order/cancel', { order_no: out_trade_no })
+        this.setData({payStatus:2, isShowStatusMask: true})
+      }
+    } else {
+      const res = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
+      if(res) {
+        this.setData({payStatus:1, isShowStatusMask: true})
+      } else {
+        this.setData({payStatus:2, isShowStatusMask: true})
+      }
+    }
   },
   closeMask(){
     this.setData({isShowStatusMask: false})

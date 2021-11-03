@@ -15,7 +15,11 @@ Page({
     navigateTo('../pay/index')
   },
   async getOrderList(){
-    const {list} = await post(`/wap/order/list?type=1&page=${this.data.page}`)
+    let {list} = await post(`/wap/order/list?type=1&page=${this.data.page}`)
+    list = list.map(v => {
+      v._added_price = Number(v.added_price)
+      return v
+    })
     const newOrderList = [...this.data.orderList, ...list]
     this.setData({orderList: newOrderList, isGetData:true})
   },

@@ -9,17 +9,18 @@
       <view bindtap="selectMoney" data-no="200" class="w28 {{no == 200 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">200元</view>
       <view bindtap="selectMoney" data-no="250" class="w28 {{no == 250 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r mr25r">250元</view>
       -->
+      <view bindtap="selectMoney" data-no="100" class="w28 mb30r {{no == 100 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">100元</view>
       <view bindtap="selectMoney" data-no="300" class="w28 mb30r {{no == 300 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">300元</view>
       <view bindtap="selectMoney" data-no="500" class="w28 mb30r {{no == 500 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">500元</view>
-      <view bindtap="selectMoney" data-no="1000" class="w28 mb30r {{no == 1000 ? 'linear6766e5 gf' : 'bgf5f6fa'}} rds10r f ac xc fs30r b pt35r pb35r">1000元</view>
     </view>
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
-    <view class="f">
-      <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
+    <view class="f ac pt45r pb45r pl30r pr30r bgf rds15r mb40r" style="box-shadow: 0rpx 5rpx 8rpx 0rpx rgb(220, 225, 233);">
+      <image class="mr30r" style="width:40rpx;height:40rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
       <view class="f1 g7c8094 fs30r">微信支付</view>
       <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
       <!--<image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>-->
     </view>
+    <view class="fs24r" style="color: #666;">充100得130，充300得400，充500得700，赠送金额不予退还。</view>
   </view>
   <view bindtap="pay" class="rds50r fixed b50r pt28r pb28r tc gf b fs32r l50 tx-50" style="width:650rpx;background: linear-gradient(-90deg, #6766E5 0%, #4847EE 100%);"><text class="mr10r">付款</text>￥{{noStr}}</view>
 </view>

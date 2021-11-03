@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    no: 300,
-    noStr: '300.00',
+    no: 100,
+    noStr: '100.00',
     options: {}, // 页面参数
   },
   async selectMoney(e){

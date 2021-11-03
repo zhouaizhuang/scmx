@@ -28,7 +28,7 @@
         </view>
         <view class="f xb">
           <view wx:if="{{item.order_type == 1}}" class="g2b3446 b fs28r">充值</view>
-          <view wx:if="{{item.order_type == 1}}"  class="{{item.pay_status == 2 ? 'gff8b36' : 'tdl'}} fs30r b"><text class="pr10r">+</text>{{item.order_price}}</view>
+          <view wx:if="{{item.order_type == 1}}"  class="{{item.pay_status == 2 ? 'gff8b36' : 'tdl'}} fs30r b"><text class="pr10r">+</text>{{item.order_price}}<text wx:if="{{item.pay_status == 2 && item._added_price > 0}}" class="pl20r fs20r" style="color:#c48435;">+{{item.added_price}}(充值赠送)</text></view>
           <view wx:else class="g2b3446 fs30r b"><text class="pr10r">-</text>{{item.order_price}}</view>
         </view>
       </view>
