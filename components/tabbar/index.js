@@ -41,7 +41,7 @@ Component({
         }, 1000)
       }
       const {path} = await getQrCode()
-      navigateTo(path)
+      navigateTo('/' + path)
     },
     goMine(){
       if(this.data.selectTab !== 'mine') {
