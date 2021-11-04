@@ -37,6 +37,12 @@ Page({
   onLoad: function (options) {
     // from ---> 标记页面来源    id标记需索充值的IC卡id
     const { from, id } = options
+    if(from == 'icCard') {
+      this.setData({
+        no: 10,
+        noStr: '10.00'
+      })
+    }
     console.log(options)
     this.setData({options})
   },
