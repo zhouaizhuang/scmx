@@ -1,5 +1,5 @@
 import { post } from "../../libs/network"
-import { navigateTo } from "../../api"
+import { navigateTo, showToast } from "../../api"
 // pages/icCard/index.js
 Page({
 
@@ -19,6 +19,11 @@ Page({
       }
     })
     this.setData({cardList, isGetData:true})
+  },
+  async convert2Bag(e){
+    await post('/wap/ic/towallet', {member_ic_id: e.currentTarget.dataset.id})
+    showToast('转入成功')
+    this.getIcCard()
   },
   async reCharge(e){
     navigateTo(`../pay/index?from=icCard&id=${e.currentTarget.dataset.id}`)
