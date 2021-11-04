@@ -7,7 +7,7 @@
     longitude="{{lng}}"
     latitude="{{lat}}"
     markers="{{markers}}" 
-    enable-traffic="{{true}}"
+    enable-traffic="{{false}}"
     enable-poi="{{true}}"
     show-location="{{true}}"
     bindmarkertap="markertap"
