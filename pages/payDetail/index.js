@@ -14,7 +14,7 @@ Page({
     showTotal: 0, // 用于展示的使用优惠券之后的需要付款的总金额
     isShowStatusMask: false, // 是否显示付款状态弹窗
     payStatus: 0, // 0：未付款 1：付款成功  2：付款失败
-    payType: 1, // 1:微信支付   3钱包支付   4 IC卡支付
+    payType: 3, // 1:微信支付   3钱包支付   4 IC卡支付
     isShowCoupon:false, // 默认不显示优惠券选择列表
     couponNotUsed: [], // 未使用的优惠券,
     checkedCoupon: {coupon:{}}, // 选择的优惠券

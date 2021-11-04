@@ -46,21 +46,23 @@
   <!--支付方式-->
   <view class="pl50r pr50r">
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
-    <view bindtap="payWechat" class="f mb30r">
-      <image class="mr30r" style="width:40rpx;height:40rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
-      <view class="f1 g7c8094 fs30r">微信支付</view>
-      <image style="width:38rpx;height:38rpx;" src="{{payType == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
-    </view>
     <view bindtap="payWallet" class="f mb30r">
       <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_money_01.png"></image>
       <view class="f1 g7c8094 fs30r">钱包</view>
       <image style="width:38rpx;height:38rpx;" src="{{payType == 3 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
+    <view bindtap="payWechat" class="f mb30r">
+      <image class="mr30r" style="width:40rpx;height:40rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
+      <view class="f1 g7c8094 fs30r">微信支付</view>
+      <image style="width:38rpx;height:38rpx;" src="{{payType == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
+    </view>
+    <!--
     <view bindtap="payIcCard" class="f mb30r">
       <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_blue.png"></image>
       <view class="f1 g7c8094 fs30r">IC卡<text class="ml40r" wx:if="{{selectIcItem.card_no}}">卡号：{{selectIcItem.card_no}}</text></view>
       <image style="width:38rpx;height:38rpx;" src="{{payType == 4 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
+    -->
   </view>
   <!--底部付款-->
   <view class="fixed w100 b0 l0">
