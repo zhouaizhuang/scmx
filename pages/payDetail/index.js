@@ -1,6 +1,6 @@
 import { post } from "../../libs/network"
 import { showToast, requestPayment, getLocalStorage } from "../../api"
-import { safeGet, range, round } from "../../common"
+import { safeGet, range, round, isObject } from "../../common"
 
 // pages/payDetail/index.js
 Page({
@@ -73,7 +73,7 @@ Page({
     const { payType, selectIcItem } = this.data
     const {id} = this.data.checkedCoupon
     // 1:微信支付   3钱包支付   4 IC卡支付
-    if(payType == 1) {
+    if(payType == 1) { // 微信支付
       const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
       try{
         const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
@@ -85,9 +85,19 @@ Page({
       }
     } else {
       const res = await post('/wap/order/pay', {rice_amount, machine_id, member_coupon_id: id, pay_type: payType, member_ic_id: selectIcItem.id})
-      if(res) {
+      if(isObject(res)) { // 如果返回对象则代表钱包余额不足支付、那么继续采用微信支付
+        const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no } = res
+        try{ // 微信支付
+          const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
+          console.log(res)
+          this.setData({payStatus:1, isShowStatusMask: true})
+        } catch(e) { // 取消支付
+          post('/wap/order/cancel', { order_no: out_trade_no })
+          this.setData({payStatus:2, isShowStatusMask: true})
+        }
+      } else if(res) { // 返回true代表余额支付成功
         this.setData({payStatus:1, isShowStatusMask: true})
-      } else {
+      } else { // 返回false代表余额支付失败
         this.setData({payStatus:2, isShowStatusMask: true})
       }
     }
@@ -108,11 +118,17 @@ Page({
     const {id} = item
     const couponNotUsed = this.data.couponNotUsed.map(item => {
       if(item.id == id) {
-        item.isChecked = true
-        const total_price = safeGet(() => this.data.info.total_price, 0) - Number(safeGet(() => item.coupon.amount,0))
-        const showTotal = range(round(total_price, 2), 0)
-        // console.log(showTotal)
-        this.setData({checkedCoupon:item, showTotal})
+        item.isChecked = !item.isChecked
+        let [total_price, showTotal] = [0, 0]
+        if(item.isChecked) {
+          total_price = safeGet(() => this.data.info.total_price, 0) - Number(safeGet(() => item.coupon.amount,0))
+          showTotal = range(round(total_price, 2), 0)
+          this.setData({checkedCoupon:item, showTotal})
+        } else {
+          total_price = safeGet(() => this.data.info.total_price, 0)
+          showTotal = range(round(total_price, 2), 0)
+          this.setData({checkedCoupon:{coupon:{}}, showTotal})
+        }
       } else {
         item.isChecked = false
       }
@@ -123,8 +139,9 @@ Page({
   // 获取优惠券
   async getCoupon(){
     const {rice_amount} = this.data.options
+    const {id} = this.data.checkedCoupon
     let list = await post('/wap/coupon/valid?expand=coupon', { price: rice_amount })
-    list = list.map(v => ({...v, isChecked: false, _perLimit: Number(v.coupon.perLimit)}))
+    list = list.map(v => ({...v, isChecked: v.id == id, _perLimit: Number(v.coupon.perLimit)}))
     this.setData({ couponNotUsed: list })
   },
   async getIcCardList(){
