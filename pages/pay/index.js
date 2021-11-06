@@ -1,6 +1,6 @@
 import { post } from "../../libs/network"
 import { formatMoney } from "../../common"
-import { requestPayment, navigateTo, navigateBack } from "../../api" 
+import { requestPayment, goBack } from "../../api" 
 // pages/pay/index.js
 Page({
 
@@ -26,7 +26,7 @@ Page({
     const {appId, nonceStr, package:pack, paySign, signType, timeStamp, out_trade_no} = await post('/wap/prepaid/wxpay', { price: no, order_type, member_ic_id: id })
     try{
       const res = await requestPayment({timeStamp, nonceStr, package: pack, signType, paySign, appId})
-      navigateBack()
+      goBack()
     } catch(e){
       post('/wap/order/cancel', { order_no: out_trade_no })
     }

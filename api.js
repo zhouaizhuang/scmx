@@ -73,6 +73,21 @@ export const navigateBack = function (delta = 1, time = 0) {
     }, time)
   })
 }
+// 返回前N页，并执行返回后的页面中onload方法
+export const goBack = function (delta = 1){
+  return new Promise((resolve, reject) => {
+    wx.navigateBack({
+      delta,
+      success: res => {
+        var page = getCurrentPages().pop()
+        if (page == undefined || page == null) { return }
+        page.onLoad();
+        resolve(res)
+      },
+      fail: err => { reject(err) }
+    })
+  })
+}
 // 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面（不可返回）
 export const switchTab = function (url = '', time = 0){
   return new Promise((resolve, reject) => {
