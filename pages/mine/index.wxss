@@ -1,7 +1,7 @@
 /* pages/mine/index.wxss */
 .bgtop{
   height:320rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_top_bg.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_top_bg.png') no-repeat;
   background-size:100%;
 }
 .aniScale{

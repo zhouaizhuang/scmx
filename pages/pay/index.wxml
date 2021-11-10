@@ -13,10 +13,10 @@
     </view>
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
     <view class="f ac pt45r pb45r pl30r pr30r bgf rds15r mb40r" style="box-shadow: 0rpx 5rpx 8rpx 0rpx rgb(220, 225, 233);">
-      <image class="mr30r" style="width:40rpx;height:40rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
+      <image class="mr30r" style="width:40rpx;height:40rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_wechat_logo.png"></image>
       <view class="f1 g7c8094 fs30r">微信支付</view>
-      <image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
-      <!--<image style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>-->
+      <image style="width:38rpx;height:38rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_checked.png"></image>
+      <!--<image style="width:38rpx;height:38rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_not_checked.png"></image>-->
     </view>
     <view class="fs24r" style="color: #666;">充100得130，充300得400，充500得700，赠送金额不予退还。</view>
   </view>

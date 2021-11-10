@@ -3,7 +3,7 @@
     <view class="pt30r pl30r pr30r pb60r">
       <view class="f mb60r">
         <view class="rds50 ovh mr40r" style="width:80rpx;height:80rpx;">
-          <image src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg" class="w100 h100 db"></image>
+          <image src="https://pic.chuangcheng8.com/xcx/scmx_logo.jpg" class="w100 h100 db"></image>
         </view>
         <view class="f1 f rw">
           <view class="w100 g393e51 fs30r b">苏澄米香品名</view>
@@ -17,7 +17,7 @@
       <view class="f mb30r xe">
         <view class="g2b3446 fs26r">优惠券：</view>
         <view class="f1"></view>
-        <view wx:if="{{checkedCoupon.coupon.amount}}" bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs28r gff8b36">-￥{{checkedCoupon.coupon.amount}}<image class="dib pl15r" style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_right_arr_01.png"></image></view>
+        <view wx:if="{{checkedCoupon.coupon.amount}}" bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs28r gff8b36">-￥{{checkedCoupon.coupon.amount}}<image class="dib pl15r" style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_right_arr_01.png"></image></view>
         <view wx:else bindtap="openCoupon" class="f ac xc rds20r pt9r pb9r pl19r pr19r fs22r gf" style="background: linear-gradient(-90deg, #FFAB58 0%, #FF8B36 100%);">未选优惠券，最高10元可用 ></view>
       </view>
       <view class="bgf5f6fa mb30r" style="width:500rpx;height:1rpx;"></view>
@@ -47,20 +47,20 @@
   <view class="pl50r pr50r">
     <view class="g2b3446 b fs40r mt40r mb40r">支付方式</view>
     <view bindtap="payWallet" class="f mb30r">
-      <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_money_01.png"></image>
+      <image class="mr30r" style="width:36rpx;height:36rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_money_01.png"></image>
       <view class="f1 g7c8094 fs30r">钱包</view>
-      <image style="width:38rpx;height:38rpx;" src="{{payType == 3 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
+      <image style="width:38rpx;height:38rpx;" src="{{payType == 3 ? 'https://pic.chuangcheng8.com/xcx/scmx_checked.png' : 'https://pic.chuangcheng8.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
     <view bindtap="payWechat" class="f mb30r">
-      <image class="mr30r" style="width:40rpx;height:40rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_logo.png"></image>
+      <image class="mr30r" style="width:40rpx;height:40rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_wechat_logo.png"></image>
       <view class="f1 g7c8094 fs30r">微信支付</view>
-      <image style="width:38rpx;height:38rpx;" src="{{payType == 1 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
+      <image style="width:38rpx;height:38rpx;" src="{{payType == 1 ? 'https://pic.chuangcheng8.com/xcx/scmx_checked.png' : 'https://pic.chuangcheng8.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
     <!--
     <view bindtap="payIcCard" class="f mb30r">
-      <image class="mr30r" style="width:36rpx;height:36rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_blue.png"></image>
+      <image class="mr30r" style="width:36rpx;height:36rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_ic_blue.png"></image>
       <view class="f1 g7c8094 fs30r">IC卡<text class="ml40r" wx:if="{{selectIcItem.card_no}}">卡号：{{selectIcItem.card_no}}</text></view>
-      <image style="width:38rpx;height:38rpx;" src="{{payType == 4 ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png'}}"></image>
+      <image style="width:38rpx;height:38rpx;" src="{{payType == 4 ? 'https://pic.chuangcheng8.com/xcx/scmx_checked.png' : 'https://pic.chuangcheng8.com/xcx/scmx_not_checked.png'}}"></image>
     </view>
     -->
   </view>
@@ -96,8 +96,8 @@
                 <view wx:if="{{item.coupon.today_expire}}" class="w100 gff8b36 fs24r">今日到期</view>
                 <view wx:else class="w100 gff8b36 fs24r">有效期：{{item.coupon.start_time}}-{{item.coupon.end_time}}</view>
               </view>
-              <image wx:if="{{item.isChecked}}" style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_checked.png"></image>
-              <image wx:else style="width:38rpx;height:38rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_not_checked.png"></image>
+              <image wx:if="{{item.isChecked}}" style="width:38rpx;height:38rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_checked.png"></image>
+              <image wx:else style="width:38rpx;height:38rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_not_checked.png"></image>
             </view>
           </view>
         </view>
@@ -119,7 +119,7 @@
         <view class="abs l0 r0 b0 ovya" style="top:120rpx;padding-bottom:100rpx;">
           <view bindtap="selectIcCard" data-item="{{item}}" wx:for="{{icCardList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="{{item._price > 0 ? 'icCardBg' : 'icCardBgBlue'}} mb30r auto">
             <view class="f ac pl30r pt50r pb50r pr30r">
-              <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
+              <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="https://pic.chuangcheng8.com/xcx/scmx_logo.jpg"></image>
               <view class="f1 f ac rw">
                 <view class="w100 gf fs30r mb10r">卡号：{{item.card_no}}</view>
                 <view class="w100 f ac">
@@ -127,7 +127,7 @@
                   <view class="f1 fs50r gf b">{{item.price}}</view>
                 </view>
               </view>
-              <image style="width:35rpx;height:35rpx;" src="{{item.isChecked ? 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_checked.png' : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_not_checked.png'}}"></image>
+              <image style="width:35rpx;height:35rpx;" src="{{item.isChecked ? 'https://pic.chuangcheng8.com/xcx/scmx_ic_checked.png' : 'https://pic.chuangcheng8.com/xcx/scmx_ic_not_checked.png'}}"></image>
             </view>
           </view>
         </view>

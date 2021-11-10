@@ -2,7 +2,7 @@
   <view class="pl30r pr30r pt30r rel" style="min-height:700rpx;">
     <view wx:for="{{cardList}}" wx:for-item="item" wx:for-index="index" wx:key="unique" class="{{item._price > 0 ? 'icCardBg' : 'icCardBgBlue'}} mb30r auto rel">
       <view class="f ac pl30r pt50r pb50r pr30r">
-        <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_logo.jpg"></image>
+        <image style="width:100rpx;height:100rpx;" class="mr30r rds50r" src="https://pic.chuangcheng8.com/xcx/scmx_logo.jpg"></image>
         <view class="fs24r gf mr15r" style="transform:translateY(10rpx);">余额</view>
         <view class="f1 fs50r gf b">{{item.price}}</view>
       </view>
@@ -12,7 +12,7 @@
       </view>
     </view>
     <view wx:if="{{isGetData && cardList.length == 0}}" class="abs l50 tx-50" style="top:350rpx;">
-      <image class="mb30r db auto" style="width:220rpx;height:156rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_card_def.png"></image>
+      <image class="mb30r db auto" style="width:220rpx;height:156rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_ic_card_def.png"></image>
       <view class="g7c8094 fs30r">您还没有绑定IC卡哦~</view>
     </view>
   </view>

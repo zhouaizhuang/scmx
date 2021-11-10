@@ -1,12 +1,12 @@
 /* pages/mywallet/index.wxss */
 .bgtop{
   height:320rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_line.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_card_line.png') no-repeat;
   background-size:100%;
 }
 .bgbody{
   height:150rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_linear.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_linear.png') no-repeat;
   background-size:100%;
 }
 .linear6766e5{

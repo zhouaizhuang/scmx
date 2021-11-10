@@ -2,24 +2,24 @@
 .payDetailBg{
   height:638rpx;
   width: 651rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_box_bg.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_box_bg.png') no-repeat;
   background-size:100%;
 }
 .couponbg{
   height:160rpx;
   width:650rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_card.png') no-repeat;
   background-size:100%;
 }
 .icCardBg{
   height:200rpx;
   width:650rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_oriange.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_oriange.png') no-repeat;
   background-size:100%;
 }
 .icCardBgBlue{
   height:200rpx;
   width:650rpx;
-  background: url('http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_blue.png') no-repeat;
+  background: url('https://pic.chuangcheng8.com/xcx/scmx_blue.png') no-repeat;
   background-size:100%;
 }

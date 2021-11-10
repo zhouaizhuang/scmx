@@ -2,7 +2,7 @@
   <view class="bgtop rel zx1">
     <view class="f ac pt30r pl40r pr40r">
       <image wx:if="{{userInfo.avatar}}" class="rds50 mr30r" style="width:120rpx;height:120rpx;" src="{{userInfo.avatar}}"></image>
-      <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_avatar.png"></image>
       <view class="f1 f rw">
         <view class="w100 fs44r gf mb10r"><text class="fs24r">￥</text>{{userInfo.amount}}</view>
         <view class="w100 gf op6 fs24r">可用余额</view>
@@ -33,7 +33,7 @@
         </view>
       </view>
       <view wx:if="{{isGetData && orderList.length == 0}}" class="abs l50 tx-50" style="top:150rpx;">
-        <image class="mb30r db auto" style="width:220rpx;height:156rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text_01.png"></image>
+        <image class="mb30r db auto" style="width:220rpx;height:156rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_text_01.png"></image>
         <view class="g7c8094 fs30r">您还没有充值过哦~</view>
       </view>
     </view>

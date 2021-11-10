@@ -32,7 +32,7 @@
   </view>
   <!--缺省页面-->
   <view wx:if="{{isGetData && orderList.length == 0}}" class="abs l50 tx-50" style="top:450rpx;">
-    <image class="mb30r" style="width:220rpx;height:156rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text_01.png"></image>
+    <image class="mb30r" style="width:220rpx;height:156rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_text_01.png"></image>
     <view class="g7c8094 fs30r">您还没有下单过哦~</view>
   </view>
 </view>

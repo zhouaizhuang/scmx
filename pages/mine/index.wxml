@@ -3,7 +3,7 @@
   <view class="bgtop rel zx1">
     <view class="f ac pt30r pl40r pr40r">
       <image wx:if="{{userInfo.avatar}}" class="rds50 mr30r" style="width:120rpx;height:120rpx;" src="{{userInfo.avatar}}"></image>
-      <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png"></image>
+      <image wx:else class="rds50" style="width:180rpx;height:180rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_avatar.png"></image>
       <view wx:if="{{!token}}" class="bgf pt10r pb12r pl30r pr30r rds40r g2b3446 b fs30r" bindtap="showLogin">请先登录</view>
       <view wx:else class="fs36r gf b">{{userInfo.nick_name}}</view>
     </view>
@@ -12,33 +12,33 @@
   <view class="rel zx10 bgf rds20r auto" style="transform:translateY(-110rpx);width:650rpx;box-shadow: 0px 5px 209px 11px rgba(177, 184, 200, 0.1);">
     <view class="pl30r pt20r pr30r pb40r">
       <view bindtap="goWallet" class="f ac pt30r pb30r bdbf0f2fd">
-        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wallet.png"></image>
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_wallet.png"></image>
         <view class="f1 g2b3446 b fs34r">我的钱包</view>
-        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+        <image style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_arrow.png"></image>
       </view>
       <view bindtap="myCoupon" class="f ac pt30r pb30r bdbf0f2fd">
-        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_card_01.png"></image>
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_card_01.png"></image>
         <view class="f1 g2b3446 b fs34r">我的卡券</view>
-        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+        <image style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_arrow.png"></image>
       </view>
       <view bindtap="goIcCard" class="f ac pt30r pb30r bdbf0f2fd">
-        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_ic_red.png"></image>
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_ic_red.png"></image>
         <view class="f1 g2b3446 b fs34r">我的IC卡</view>
-        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+        <image style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_arrow.png"></image>
       </view>
        <view bindtap="goMyOrder" class="f ac pt30r pb30r bdbf0f2fd">
-        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_text.png"></image>
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_text.png"></image>
         <view class="f1 g2b3446 b fs34r">我的订单</view>
-        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+        <image style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_arrow.png"></image>
       </view>
       <view class="f ac pt30r pb30r bdbf0f2fd">
-        <image class="mr40r" style="width:54rpx;height:54rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat.png"></image>
+        <image class="mr40r" style="width:54rpx;height:54rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_wechat.png"></image>
           <view class="f1 g2b3446 b fs34r">
             <button open-type="contact" style="width:100%;display:block;text-align:left;padding:0;background-color:#fff;">
               联系我们
             </button>
           </view>
-        <image style="width:12rpx;height:20rpx;" src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_arrow.png"></image>
+        <image style="width:12rpx;height:20rpx;" src="https://pic.chuangcheng8.com/xcx/scmx_arrow.png"></image>
       </view>
     </view>
   </view>

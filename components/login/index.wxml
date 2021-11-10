@@ -1,11 +1,11 @@
 <view wx:if="{{isShowLogin}}" bindtap="closeLogin" class="fixed trbl0 zx50" style="background-color: rgba(0,0,0,.6)">
 </view>
 <view wx:if="{{isShowLogin}}" class="bgf rds40r abs pb50r zx60" style="top:30%;left:70rpx;right:70rpx;">
-  <image class="mb20r db auto mt50r rds50" style="width:150rpx;height:150rpx;" src="{{avatar ? avatar : 'http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_avatar.png'}}"></image>
+  <image class="mb20r db auto mt50r rds50" style="width:150rpx;height:150rpx;" src="{{avatar ? avatar : 'https://pic.chuangcheng8.com/xcx/scmx_avatar.png'}}"></image>
   <view class="g7c8094 fs30r mb28r tc">我们需要您的授权，以继续操作</view>
   <button wx:if="{{!isGetUserInfo}}" class="gf fs30r f ac xc" style="width:460rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);border-radius: 44px;" bindtap="getUserData">微信信息授权</button>
   <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="f ac xc aniScale" style="width:460rpx;height:88rpx;background: linear-gradient(-270deg, #6766E5 0%, #4847EE 100%);border-radius: 44px;">
-    <image style="width:36rpx;height:32rpx;"src="http://r0stwq2aa.bkt.clouddn.com/xcx/scmx_wechat_white.png" />
+    <image style="width:36rpx;height:32rpx;"src="https://pic.chuangcheng8.com/xcx/scmx_wechat_white.png" />
     <text class="fs30r gf pl15r">微信授权登录</text>
   </button>
 </view>
