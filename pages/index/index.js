@@ -35,7 +35,7 @@ Page({
     this.mapCtx.getCenterLocation({
       success: function(res){
         // console.log(res)
-        console.log(res.latitude + ',' + res.longitude)
+        // console.log(res.latitude + ',' + res.longitude)
       }
     })
   },
@@ -46,10 +46,10 @@ Page({
       longitude:lng,
       latitude: lat,
       success: res => {
-        console.log(res)
+        // console.log(res)
       },
       fail: err => {
-        console.log(err)
+        // console.log(err)
       }
     })
   },
@@ -76,7 +76,7 @@ Page({
     let markArr = await post('/wap/machine/list')
     markArr = (markArr || []).map(v => {
       const { id, map_lat, map_lng } = v
-      console.log(map_lat, map_lng)
+      // console.log(map_lat, map_lng)
       v.id = Number(id)
       return {
         iconPath: 'https://pic.chuangcheng8.com/xcx/scmx_has_mi.png', //浮标图片路径，推荐png图片
