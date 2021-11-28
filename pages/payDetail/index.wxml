@@ -7,7 +7,7 @@
         </view>
         <view class="f1 f rw">
           <view class="w100 g393e51 fs30r b">苏澄米香品名</view>
-          <view class="w100 g7c8094 fs26r">数量：{{info.rice_amount}}kg</view>
+          <view class="w100 g7c8094 fs26r">数量：{{info.rice_amount}}斤</view>
         </view>
       </view>
       <view class="f mb20r">
