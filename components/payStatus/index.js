@@ -8,8 +8,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    payStatus: 0, // 0：未付款 1：付款成功  2：付款失败
-    isShowStatusMask:false, // 是否显示支付状态
+    payStatus: { // 0：未付款 1：付款成功  2：付款失败
+      type: Number,
+      value: 0,
+    },
+    isShowStatusMask:{ // 是否显示支付状态
+      type: Boolean,
+      value: false,
+    }
   },
 
   /**
