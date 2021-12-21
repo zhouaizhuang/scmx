@@ -1,6 +1,6 @@
 /**index.wxss**/
 .bgimg{
-  height:455rpx;
+  height:350rpx;
   background: url('https://pic.chuangcheng8.com/xcx/scmx_card_top.png') no-repeat;
   background-size:100%;
 }
